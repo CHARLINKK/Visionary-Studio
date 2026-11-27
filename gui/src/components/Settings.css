@@ -1,0 +1,11 @@
+/**
+ * Settings.css - Manifest de Estilos do Módulo de Configurações
+ * Modularizado em subfolhas focadas por domínio em gui/src/components/Settings/
+ */
+@import './Settings/SettingsNav.css';
+@import './Settings/ModernCheckbox.css';
+@import './Settings/SettingsUI.css';
+@import './Settings/SettingsWorkflow.css';
+@import './Settings/SettingsShortcuts.css';
+@import './Settings/SettingsAudio.css';
+@import './Settings/SettingsAbout.css';

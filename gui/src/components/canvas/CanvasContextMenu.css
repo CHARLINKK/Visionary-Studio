@@ -1,0 +1,137 @@
+/* =========================================================================
+   CANVAS CONTEXT MENU (MENU DO BOTÃO DIREITO)
+   ========================================================================= */
+
+.canvas-context-menu {
+  position: fixed;
+  z-index: 99999;
+  min-width: 220px;
+  max-width: 280px;
+  background: var(--bg-surface-elevated, #151824);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(99, 102, 241, 0.25);
+  padding: 5px;
+  user-select: none;
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  animation: canvasContextMenuEnter 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+
+@keyframes canvasContextMenuEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.ctx-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px 4px 8px;
+  font-size: 11px;
+  color: var(--text-muted, #94a3b8);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.ctx-header-title {
+  color: #c7d2fe;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ctx-header-meta {
+  font-size: 10px;
+  font-family: var(--font-mono, monospace);
+  color: #64748b;
+  margin-left: 8px;
+}
+
+.ctx-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  margin: 4px 4px;
+}
+
+.ctx-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #e2e8f0;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.ctx-item:hover:not(:disabled) {
+  background: rgba(99, 102, 241, 0.2);
+  color: #ffffff;
+}
+
+.ctx-item:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.ctx-item.danger {
+  color: #f87171;
+}
+
+.ctx-item.danger:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+.ctx-icon {
+  flex-shrink: 0;
+  color: #94a3b8;
+  transition: color 0.12s ease;
+}
+
+.ctx-item:hover:not(:disabled) .ctx-icon {
+  color: #c7d2fe;
+}
+
+.ctx-item.danger .ctx-icon {
+  color: #f87171;
+}
+
+.ctx-icon.icon-sfx {
+  color: #f59e0b;
+}
+
+.ctx-shortcut {
+  margin-left: auto;
+  font-size: 10px;
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+  color: #64748b;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ctx-item:hover:not(:disabled) .ctx-shortcut {
+  color: #cbd5e1;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+[data-reduce-motion="true"] .canvas-context-menu {
+  animation: none !important;
+}

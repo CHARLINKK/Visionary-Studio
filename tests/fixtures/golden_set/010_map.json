@@ -1,0 +1,145 @@
+{
+  "version": 2,
+  "description": "Golden Set Ground Truth - Page 010 (Multi-tier Classic / TV Starbursts & Dialogues)",
+  "image_file": "010.jpg",
+  "width": 1477,
+  "height": 2100,
+  "panels": [
+    {
+      "id": 1,
+      "order": 1,
+      "box": [965, 0, 1477, 748],
+      "polygon": [[965, 0], [1477, 0], [1477, 736], [1066, 748]],
+      "description": "Tier 1 Direito - Médicos e enfermeiras em pé no corredor observando"
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "box": [114, 0, 1044, 768],
+      "polygon": [[114, 0], [942, 0], [1044, 752], [114, 768]],
+      "description": "Tier 1 Esquerdo - Quarto de hospital em perspectiva ampla (Hanabi na cama e TV)"
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "box": [114, 776, 1477, 1114],
+      "polygon": [[114, 806], [1477, 776], [1477, 1114], [114, 1114]],
+      "description": "Tier 2 - Rosto de Hanabi deitado na cama olhando para a TV"
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "box": [724, 1134, 1477, 1424],
+      "polygon": [[724, 1134], [1477, 1134], [1477, 1424], [766, 1424]],
+      "description": "Tier 3 Direito - Hanabi olhando as palmas das mãos"
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "box": [114, 1134, 744, 1424],
+      "polygon": [[114, 1134], [702, 1134], [744, 1424], [114, 1424]],
+      "description": "Tier 3 Esquerdo - Hanabi tocando o queixo com expressão de confusão ('HUH?')"
+    },
+    {
+      "id": 6,
+      "order": 6,
+      "box": [966, 1458, 1477, 1722],
+      "polygon": [[966, 1458], [1477, 1458], [1477, 1722], [966, 1722]],
+      "description": "Tier 4 Superior Direito - Dedo na boca sentindo o espaço vazio"
+    },
+    {
+      "id": 7,
+      "order": 7,
+      "box": [966, 1756, 1477, 2100],
+      "polygon": [[966, 1756], [1477, 1756], [1477, 2100], [966, 2100]],
+      "description": "Tier 4 Inferior Direito - Olho de Hanabi arregalado e focado"
+    },
+    {
+      "id": 8,
+      "order": 8,
+      "box": [114, 1458, 940, 2100],
+      "polygon": [[114, 1458], [940, 1458], [940, 2100], [114, 2100]],
+      "description": "Tier 4 Esquerdo Amplo - Macro da arcada dentária com o dente faltando"
+    }
+  ],
+  "boxes": [
+    {
+      "id": 1,
+      "order": 1,
+      "panel_id": 2,
+      "x1": 590,
+      "y1": 53,
+      "x2": 785,
+      "y2": 368,
+      "label": "text_bubble",
+      "text": "But Russia's Kyshenko ...!!",
+      "translated_text": "Mas o russo Kyshenko ...!!",
+      "is_sfx": false
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "panel_id": 2,
+      "x1": 105,
+      "y1": 312,
+      "x2": 305,
+      "y2": 784,
+      "label": "text_bubble",
+      "text": "He's turned it around!! Wow!! What a change of pace!!",
+      "translated_text": "Ele virou a luta!! Uau!! Que mudança de ritmo!!",
+      "is_sfx": false
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "panel_id": 3,
+      "x1": 907,
+      "y1": 777,
+      "x2": 1158,
+      "y2": 1094,
+      "label": "text_bubble",
+      "text": "Hanabi can't let his guard down!!",
+      "translated_text": "Hanabi não pode baixar a guarda!!",
+      "is_sfx": false
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "panel_id": 5,
+      "x1": 132,
+      "y1": 1159,
+      "x2": 237,
+      "y2": 1321,
+      "label": "text_bubble",
+      "text": "HUH?",
+      "translated_text": "HÃ?",
+      "is_sfx": false
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "panel_id": 7,
+      "x1": 970,
+      "y1": 1803,
+      "x2": 1065,
+      "y2": 1964,
+      "label": "text_bubble",
+      "text": "...",
+      "translated_text": "...",
+      "is_sfx": false
+    },
+    {
+      "id": 6,
+      "order": 6,
+      "panel_id": 8,
+      "x1": 372,
+      "y1": 1487,
+      "x2": 543,
+      "y2": 1696,
+      "label": "text_bubble",
+      "text": "MY TOOTH ...",
+      "translated_text": "MEU DENTE ...",
+      "is_sfx": false
+    }
+  ]
+}

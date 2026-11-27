@@ -1,0 +1,132 @@
+/* =========================================================================
+   VISIONARY STUDIO - SEAMLESS EDITOR: SIDEBAR CONTAINER & SHARED UTILS
+   ========================================================================= */
+
+.editor-sidebar {
+  width: 360px;
+  background-color: var(--bg-panel);
+  border-left: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  z-index: 550;
+  transform: translateZ(0);
+  contain: layout;
+  transition: background-color 0.2s ease;
+}
+
+.editor-sidebar .sidebar-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.editor-sidebar .sidebar-header h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: 0.3px;
+}
+
+.btn-deselect-header {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-deselect-header:hover {
+  background: var(--bg-surface-elevated);
+  color: var(--text-main);
+  border-color: var(--border-hover);
+}
+
+.sidebar-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow-y: auto;
+  will-change: scroll-position;
+  contain: content;
+}
+
+.sidebar-content.layout-mode {
+  padding: 12px 14px;
+  gap: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  min-height: 0;
+}
+
+.inspector-section h4 {
+  margin: 0 0 16px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #333;
+}
+
+.indicator.layout.active { background: var(--brand-primary); box-shadow: 0 0 10px var(--brand-primary); }
+.indicator.ocr.active { background: var(--brand-purple); box-shadow: 0 0 10px var(--brand-purple); }
+.indicator.trans.active { background: var(--brand-green); box-shadow: 0 0 10px var(--brand-green); }
+
+.w-full {
+  width: 100%;
+}
+
+.mt-2 {
+  margin-top: 12px;
+}
+
+/* ── Split Dense Script Balloons (Sidebar View) ── */
+.script-balloon-row.split-dense .balloon-num-badge {
+  min-width: 22px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.script-balloon-row.split-dense .balloon-en-line {
+  color: var(--text-tertiary);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.script-balloon-row.split-dense .balloon-br-line {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.script-balloon-row.split-dense .balloon-br-line .text-val.br-highlight {
+  color: var(--text-main);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  display: inline;
+}

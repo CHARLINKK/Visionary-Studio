@@ -1,0 +1,116 @@
+{
+  "name": "visionary-studio",
+  "version": "1.0.0",
+  "engineVersion": "1.0.0",
+  "description": "Visionary Studio - PRO EDITION Manga/Comic AI Translation & Typesetting Suite",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron electron/main.js",
+    "build:ui": "npm --prefix gui run build",
+    "dist": "npm run dist:installer",
+    "dist:dir": "npm run build:ui && electron-builder --dir",
+    "dist:all": "npm run build:ui && electron-builder --win nsis portable",
+    "dist:installer": "npm run build:ui && electron-builder --win nsis",
+    "dist:portable": "npm run build:ui && electron-builder --win portable",
+    "test": "pytest tests/ -v",
+    "test:ui": "npm --prefix gui run test",
+    "test:all": "pytest tests/ -q && npm run test:ui",
+    "test:electron": "node --test tests/electron/*.test.js",
+    "smoke:electron": "electron scripts/smoke_test_electron.js",
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "build": {
+    "appId": "com.visionary.studio",
+    "productName": "Visionary Studio",
+    "asar": true,
+    "asarUnpack": [
+      "src/**/*",
+      "assets/**/*",
+      "models/**/*",
+      "requirements.txt",
+      "requirements-ai.txt"
+    ],
+    "compression": "store",
+    "removePackageScripts": true,
+    "removePackageKeywords": true,
+    "directories": {
+      "output": "dist_installer"
+    },
+    "files": [
+      "electron/**/*",
+      "gui/dist/**/*",
+      "src/**/*",
+      "!src/**/*.pyo",
+      "assets/**/*",
+      "!assets/python/engine/**",
+      "!assets/python/engine-runtime.tar.zst",
+      "!assets/python/prebuilt-engine.zip",
+      "!node_modules/**",
+      "!models/*.pt",
+      "!models/**/*.pt",
+      "models/glossaries/**/*",
+      "requirements.txt",
+      "requirements-ai.txt",
+      "package.json",
+      "!**/*.map",
+      "!**/*.log",
+      "!**/*.md"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "portable": {
+      "artifactName": "Visionary Studio Portable ${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "runAfterFinish": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Visionary Studio",
+      "differentialPackage": true,
+      "include": "build/uninstaller.nsh"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "CHARLINKK",
+        "repo": "Visionary-Studio",
+        "releaseType": "release"
+      }
+    ]
+  },
+  "keywords": [
+    "manga",
+    "translation",
+    "ocr",
+    "typesetting",
+    "visionary"
+  ],
+  "author": "Visionary Team",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/generator": "^7.29.8",
+    "@babel/parser": "^7.29.9",
+    "@babel/traverse": "^7.29.8",
+    "@babel/types": "^7.29.8",
+    "electron": "^41.10.7",
+    "electron-builder": "^26.15.3"
+  }
+}

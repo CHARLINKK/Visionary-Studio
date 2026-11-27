@@ -1,0 +1,186 @@
+/* =========================================================================
+   VISIONARY STUDIO - RAW SCRIPT VIEWER & SYNTAX HIGHLIGHTER STYLES
+   ========================================================================= */
+
+.raw-syntax-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-card, #0f111a);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  overflow-y: auto;
+  overflow-x: auto;
+  scrollbar-gutter: stable;
+  box-sizing: border-box;
+}
+
+.raw-syntax-code {
+  font-family: var(--font-mono), "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+  font-size: 12.5px;
+  line-height: 1.65;
+  padding: 14px 0;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.raw-syntax-row {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  padding: 0 16px 0 0;
+  transition: background 0.1s ease;
+}
+
+.raw-syntax-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.raw-line-num {
+  width: 48px;
+  min-width: 48px;
+  text-align: right;
+  padding-right: 14px;
+  color: #475569;
+  font-size: 11px;
+  user-select: none;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+}
+
+.raw-line-content {
+  flex: 1;
+  min-width: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.raw-line {
+  display: inline;
+}
+
+/* ── Tokens ── */
+
+/* Header / Brand comments */
+.token-comment-hash {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.token-brand-title {
+  color: #38bdf8;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.token-meta-label {
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.token-meta-val {
+  color: #f1f5f9;
+  font-weight: 500;
+}
+
+.token-meta-progress {
+  color: #c084fc;
+  font-weight: 600;
+}
+
+.token-comment {
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Divider lines (====, ----) */
+.token-divider {
+  color: #334155;
+  opacity: 0.85;
+}
+
+/* Page titles */
+.token-page-label {
+  color: #c084fc;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.token-page-file {
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* Minimalist Balloon ID Link - literally clicking on the text */
+.token-id-link {
+  color: #818cf8;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0 2px;
+  transition: color 0.15s ease, text-decoration 0.15s ease, background-color 0.15s ease;
+  user-select: text;
+}
+
+.token-id-link:hover {
+  color: #c4b5fd;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  background-color: rgba(129, 140, 248, 0.15);
+}
+
+.token-id-link:active {
+  color: #ffffff;
+}
+
+.token-balloon-id {
+  color: #818cf8;
+  font-weight: 600;
+}
+
+/* English line */
+.token-tag-en {
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.token-text-en {
+  color: #cbd5e1;
+}
+
+.token-text-no-ocr {
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Portuguese line */
+.token-tag-br {
+  color: #34d399;
+  font-weight: 700;
+}
+
+.token-text-br {
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+.token-text-pending {
+  color: #fbbf24;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Default / Empty */
+.default-line {
+  color: #e2e8f0;
+}
+
+.raw-text-empty {
+  padding: 32px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}

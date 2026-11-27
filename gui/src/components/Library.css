@@ -1,0 +1,68 @@
+/* =========================================================================
+   VISIONARY STUDIO - LIBRARY SYSTEM STYLESHEET
+   Modularized Architecture: Sub-sheets mapped to Library domain components
+   ========================================================================= */
+
+@import './Library/LibrarySidebar.css';
+@import './Library/LibraryHeader.css';
+@import './Library/LibraryBalloonRow.css';
+@import './Library/LibraryScriptView.css';
+@import './Library/LibrarySplitView.css';
+
+/* ── Library Root Layout Container & Global Utilities ── */
+.library-container {
+  display: flex;
+  height: 100%;
+  background: var(--bg-base);
+  color: var(--text-main);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.library-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.content-body {
+  flex: 1;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.view-mode-pane-container {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  animation: viewModeFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: opacity;
+}
+
+@keyframes viewModeFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}

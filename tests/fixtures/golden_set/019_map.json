@@ -1,0 +1,184 @@
+{
+  "version": 2,
+  "description": "Golden Set Ground Truth - Page 019 (Vertical Spanning Right Panel vs Stacked Left Column)",
+  "image_file": "019.jpg",
+  "width": 1487,
+  "height": 2100,
+  "panels": [
+    {
+      "id": 1,
+      "order": 1,
+      "box": [0, 9, 1360, 767],
+      "description": "Tier 1 - Rosto ameaçador do oponente dominando o topo da página"
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "box": [522, 786, 1367, 2095],
+      "description": "Coluna Direita Vertical - Lutador emanando aura pesada e espectadores comentando na base"
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "box": [2, 787, 549, 1471],
+      "description": "Coluna Esquerda Superior - Reação de surpresa da plateia sobre os Spikes"
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "box": [1, 1475, 520, 1815],
+      "description": "Coluna Esquerda Meio - Explicação anatômica da tensão muscular"
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "box": [1, 1821, 520, 2098],
+      "description": "Coluna Esquerda Base - Conclusão da explicação sobre o efeito nos golpes"
+    }
+  ],
+  "boxes": [
+    {
+      "id": 1,
+      "order": 1,
+      "panel_id": 1,
+      "x1": 1244,
+      "y1": 101,
+      "x2": 1351,
+      "y2": 336,
+      "label": "text_bubble",
+      "text": "I'M...",
+      "translated_text": "EU VOU...",
+      "is_sfx": false
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "panel_id": 1,
+      "x1": 619,
+      "y1": 93,
+      "x2": 726,
+      "y2": 390,
+      "label": "text_bubble",
+      "text": "GONNA...",
+      "translated_text": "ACABAR...",
+      "is_sfx": false
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "panel_id": 1,
+      "x1": 512,
+      "y1": 103,
+      "x2": 629,
+      "y2": 493,
+      "label": "text_bubble",
+      "text": "...CRUSH YOU.",
+      "translated_text": "...COM VOCÊ.",
+      "is_sfx": false
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "panel_id": 2,
+      "x1": 1246,
+      "y1": 1406,
+      "x2": 1351,
+      "y2": 1767,
+      "label": "text_bubble",
+      "text": "THAT'S SOME HEAVY PRESSURE...",
+      "translated_text": "ESSA É UMA PRESSÃO PESADA...",
+      "is_sfx": false
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "panel_id": 2,
+      "x1": 1097,
+      "y1": 1404,
+      "x2": 1231,
+      "y2": 1677,
+      "label": "text_bubble",
+      "text": "HE'S DEFINITELY MORE THAN JUST TALK.",
+      "translated_text": "ELE DEFINITIVAMENTE NÃO É SÓ PAPO.",
+      "is_sfx": false
+    },
+    {
+      "id": 6,
+      "order": 6,
+      "panel_id": 2,
+      "x1": 866,
+      "y1": 1403,
+      "x2": 1089,
+      "y2": 1689,
+      "label": "text_bubble",
+      "text": "YEAH. COULDN'T HAVE AN AURA LIKE THAT OTHERWISE.",
+      "translated_text": "É. NÃO TERIA UMA AURA DESSAS CASO CONTRÁRIO.",
+      "is_sfx": false
+    },
+    {
+      "id": 7,
+      "order": 7,
+      "panel_id": 3,
+      "x1": 268,
+      "y1": 787,
+      "x2": 524,
+      "y2": 1098,
+      "label": "text_bubble",
+      "text": "WOW... LOOK AT HIS BACK!",
+      "translated_text": "UAU... OLHE PARA AS COSTAS DELE!",
+      "is_sfx": false
+    },
+    {
+      "id": 8,
+      "order": 8,
+      "panel_id": 3,
+      "x1": 108,
+      "y1": 810,
+      "x2": 260,
+      "y2": 1176,
+      "label": "text_bubble",
+      "text": "...MUST MEAN HE'S USING...",
+      "translated_text": "...DEVE SIGNIFICAR QUE ELE ESTÁ USANDO...",
+      "is_sfx": false
+    },
+    {
+      "id": 9,
+      "order": 9,
+      "panel_id": 3,
+      "x1": 134,
+      "y1": 1263,
+      "x2": 243,
+      "y2": 1480,
+      "label": "text_bubble",
+      "text": "...SPIKES?",
+      "translated_text": "...ESPIGÕES?",
+      "is_sfx": false
+    },
+    {
+      "id": 10,
+      "order": 10,
+      "panel_id": 4,
+      "x1": 345,
+      "y1": 1579,
+      "x2": 484,
+      "y2": 1928,
+      "label": "text_bubble",
+      "text": "WHEN THE MUSCLES CONTRACT AT MAXIMUM TENSION...",
+      "translated_text": "QUANDO OS MÚSCULOS SE CONTRAEM EM TENSÃO MÁXIMA...",
+      "is_sfx": false
+    },
+    {
+      "id": 11,
+      "order": 11,
+      "panel_id": 5,
+      "x1": 79,
+      "y1": 1595,
+      "x2": 223,
+      "y2": 1841,
+      "label": "text_bubble",
+      "text": "WHEN IT HAPPENS TO HIM, EVERY BLOW LANDS LIKE IRON.",
+      "translated_text": "QUANDO ISSO ACONTECE COM ELE, CADA GOLPE BATE COMO FERRO.",
+      "is_sfx": false
+    }
+  ]
+}

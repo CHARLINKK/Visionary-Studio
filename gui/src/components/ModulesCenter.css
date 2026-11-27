@@ -1,0 +1,8 @@
+/**
+ * ModulesCenter.css - Manifest de Estilos da Central de Módulos & IA
+ * Modularizado em subfolhas focadas por domínio em gui/src/components/ModulesCenter/
+ */
+@import './ModulesCenter/ModulesBase.css';
+@import './ModulesCenter/TelemetryDashboard.css';
+@import './ModulesCenter/PipelineEngines.css';
+@import './ModulesCenter/TranslationModelsGrid.css';

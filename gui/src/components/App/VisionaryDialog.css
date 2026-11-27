@@ -1,0 +1,146 @@
+/* =========================================================================
+   VISIONARY STUDIO - GLOBAL MODAL DIALOGS (CONFIRM & PROMPT MODALS)
+   ========================================================================= */
+
+@keyframes dialogFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.visionary-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.72);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: dialogFadeIn 0.15s ease-out;
+  margin: 0;
+  padding: 0;
+}
+
+.visionary-dialog-modal {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-md);
+  box-shadow: var(--modal-shadow, 0 12px 36px #000c, 0 0 20px var(--brand-glow));
+  flex-direction: column;
+  gap: 14px;
+  width: 360px;
+  max-width: 90vw;
+  padding: 22px;
+  animation: .16s cubic-bezier(.16,1,.3,1) modalPop;
+  display: flex;
+  margin: auto;
+}
+
+@keyframes modalPop {
+  0% {
+    opacity: 0;
+    transform: scale(.96) translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.visionary-dialog-header {
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
+.visionary-dialog-icon-orb {
+  width: 34px;
+  height: 34px;
+  color: var(--brand-primary);
+  background: #8b5cf624;
+  border: 1px solid #8b5cf647;
+  border-radius: 8px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.visionary-dialog-header h3 {
+  color: var(--text-main);
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.visionary-dialog-close {
+  color: var(--text-muted);
+  cursor: pointer;
+  background: 0 0;
+  border: none;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  transition: all .2s;
+  display: flex;
+}
+
+.visionary-dialog-close:hover {
+  color: var(--text-main);
+  background: var(--bg-hover);
+}
+
+.visionary-dialog-body {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.visionary-dialog-actions {
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+  display: flex;
+}
+
+.visionary-dialog-btn {
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  outline: none;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all .2s;
+}
+
+.visionary-dialog-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-hover);
+}
+
+.visionary-dialog-btn.confirm {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+.visionary-dialog-btn.confirm:hover {
+  background: var(--brand-purple);
+  box-shadow: 0 0 12px var(--brand-glow);
+}

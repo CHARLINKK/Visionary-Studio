@@ -1,0 +1,126 @@
+{
+  "version": 2,
+  "description": "Golden Set Ground Truth - Page 004 (Asymmetric Multi-column / Color)",
+  "image_file": "004.jpg",
+  "width": 1791,
+  "height": 2560,
+  "panels": [
+    {
+      "id": 1,
+      "order": 1,
+      "box": [726, 0, 1791, 566],
+      "description": "Coluna direita - Topo (Isqueiro acendendo)"
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "box": [726, 600, 1791, 895],
+      "description": "Coluna direita - Meio (Fumaça e diálogo)"
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "box": [726, 925, 1791, 2560],
+      "description": "Coluna direita - Base (Cigarro na boca e sangue)"
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "box": [0, 0, 720, 2560],
+      "description": "Coluna esquerda - Altura total (Soco devastador no ringue)"
+    }
+  ],
+  "boxes": [
+    {
+      "id": 1,
+      "order": 1,
+      "panel_id": 2,
+      "x1": 743,
+      "y1": 598,
+      "x2": 1161,
+      "y2": 897,
+      "label": "text_bubble",
+      "text": "WELL, GUYS LIKE US ARE USED TO IT, THOUGH I GUESS...",
+      "translated_text": "BEM, CARAS COMO NÓS ESTÃO ACOSTUMADOS, MAS ACHO QUE...",
+      "is_sfx": false
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "panel_id": 3,
+      "x1": 1122,
+      "y1": 971,
+      "x2": 1368,
+      "y2": 1339,
+      "label": "text_bubble",
+      "text": "FISTS CAN ALSO...",
+      "translated_text": "PUNHOS TAMBÉM PODEM...",
+      "is_sfx": false
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "panel_id": 3,
+      "x1": 762,
+      "y1": 1575,
+      "x2": 1116,
+      "y2": 2102,
+      "label": "text_bubble",
+      "text": "...CUT.",
+      "translated_text": "...CORTAR.",
+      "is_sfx": false
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "panel_id": 4,
+      "x1": 322,
+      "y1": 338,
+      "x2": 588,
+      "y2": 1001,
+      "label": "text_bubble",
+      "text": "GUYS LIKE YOU ARE JUST A BUNCH OF FOOLS WHO CAN'T DO ANYTHING BUT SWING AROUND THOSE FANCY WEAP- ONS OF YOURS...",
+      "translated_text": "CARAS COMO VOCÊ SÃO APENAS UM BANDO DE IDIOTAS QUE NÃO SABEM FAZER NADA ALÉM DE BALANÇAR ESSAS SUAS ARMAS METIDAS...",
+      "is_sfx": false
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "panel_id": 4,
+      "x1": 46,
+      "y1": 915,
+      "x2": 235,
+      "y2": 1225,
+      "label": "text_bubble",
+      "text": "WHICH IS FINE BY ME...",
+      "translated_text": "O QUE POR MIM TUDO BEM...",
+      "is_sfx": false
+    },
+    {
+      "id": 6,
+      "order": 6,
+      "panel_id": 4,
+      "x1": 236,
+      "y1": 1498,
+      "x2": 533,
+      "y2": 2120,
+      "label": "text_bubble",
+      "text": "AFTER ALL, PUTTING YOUR LIFE ON THE LINE BEHIND EVERY PUNCH IS BOTH YOUR JOB...",
+      "translated_text": "AFINAL, ARRISCAR A VIDA A CADA SOCO É TANTO O SEU TRABALHO...",
+      "is_sfx": false
+    },
+    {
+      "id": 7,
+      "order": 7,
+      "panel_id": 4,
+      "x1": 22,
+      "y1": 1960,
+      "x2": 273,
+      "y2": 2513,
+      "label": "text_bubble",
+      "text": "...AND THE ONLY WAY YOU CAN HOPE TO MOVE UP IN THIS WORLD.",
+      "translated_text": "...QUANTO A ÚNICA FORMA DE ESPERAR SUBIR NA VIDA.",
+      "is_sfx": false
+    }
+  ]
+}

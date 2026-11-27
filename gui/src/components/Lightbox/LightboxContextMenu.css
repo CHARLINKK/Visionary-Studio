@@ -1,0 +1,138 @@
+/* =========================================================================
+   LIGHTBOX CONTEXT MENU (MENU DO BOTÃO DIREITO)
+   ========================================================================= */
+
+.lightbox-context-menu {
+  position: fixed;
+  z-index: 99999;
+  min-width: 220px;
+  max-width: 280px;
+  background: var(--bg-surface-elevated, #151824);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(99, 102, 241, 0.25);
+  padding: 5px;
+  user-select: none;
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  animation: lightboxContextMenuEnter 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+
+@keyframes lightboxContextMenuEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.lightbox-ctx-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px 4px 8px;
+  font-size: 11px;
+  color: var(--text-muted, #94a3b8);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  gap: 8px;
+}
+
+.lightbox-ctx-title {
+  color: #c7d2fe;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+}
+
+.lightbox-ctx-badge {
+  font-size: 10px;
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--brand-primary, #a855f7);
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.lightbox-ctx-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  margin: 4px 0;
+}
+
+.lightbox-ctx-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-main, #e2e8f0);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.12s ease, color 0.12s ease;
+  outline: none;
+}
+
+.lightbox-ctx-item:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.lightbox-ctx-item.primary:hover:not(:disabled) {
+  background: rgba(139, 92, 246, 0.22);
+  color: #e0e7ff;
+}
+
+.lightbox-ctx-item.danger {
+  color: #f87171;
+}
+
+.lightbox-ctx-item.danger:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.18);
+  color: #fca5a5;
+}
+
+.lightbox-ctx-item:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.lightbox-ctx-icon {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.lightbox-ctx-item:hover:not(:disabled) .lightbox-ctx-icon {
+  opacity: 1;
+}
+
+.lightbox-ctx-item span:first-of-type {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lightbox-ctx-shortcut {
+  font-size: 10px;
+  color: var(--text-muted, #94a3b8);
+  font-family: var(--font-mono, monospace);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: auto;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}

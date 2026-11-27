@@ -1,0 +1,374 @@
+/* =========================================================================
+   VISIONARY STUDIO - INTERACTIVE HELP INSPECTOR OVERLAY ("WHAT'S THIS?")
+   ========================================================================= */
+
+body.help-inspector-active,
+body.help-inspector-active * {
+  cursor: help !important;
+}
+
+body.help-inspector-active .help-inspector-popover,
+body.help-inspector-active .help-inspector-popover * {
+  cursor: default !important;
+}
+
+body.help-inspector-active .help-inspector-popover button,
+body.help-inspector-active .help-inspector-popover button * {
+  cursor: pointer !important;
+}
+
+.help-inspector-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 99990;
+  pointer-events: none;
+  font-family: var(--font-sans, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
+}
+
+/* ── Highlight Ring on Target Element ── */
+.help-inspector-highlight {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99991;
+  border-radius: 7px;
+  transition: top 0.09s ease-out, left 0.09s ease-out, width 0.09s ease-out, height 0.09s ease-out;
+}
+
+.help-inspector-highlight.is-hover {
+  border: 1.5px dashed #818cf8;
+  background: rgba(99, 102, 241, 0.08);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.help-inspector-highlight.is-locked {
+  border: 2px solid #6366f1;
+  background: rgba(99, 102, 241, 0.12);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.22), 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.help-highlight-tag {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 9px;
+  background: #131622;
+  border: 1px solid rgba(129, 140, 248, 0.45);
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #f1f5f9;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.help-highlight-tag.place-below {
+  bottom: auto;
+  top: calc(100% + 6px);
+}
+
+.help-highlight-tag.align-right {
+  left: auto;
+  right: 0;
+}
+
+.help-highlight-click-cta {
+  font-size: 10px;
+  font-weight: 500;
+  color: #818cf8;
+  padding-left: 6px;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ── Pop-up Explicativo Contextual ── */
+.help-inspector-popover {
+  position: fixed;
+  z-index: 99996;
+  pointer-events: auto;
+  background: #11131d;
+  border: 1px solid rgba(129, 140, 248, 0.42);
+  border-radius: 10px;
+  padding: 15px 16px;
+  color: #f1f5f9;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.78), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  animation: helpPopoverFadeIn 0.14s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.help-inspector-popover::-webkit-scrollbar {
+  width: 5px;
+}
+
+.help-inspector-popover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+.help-inspector-popover::-webkit-scrollbar-thumb:hover {
+  background: rgba(129, 140, 248, 0.45);
+}
+
+@keyframes helpPopoverFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.help-pop-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+/* ── Barra de Camadas Hierárquicas (Raio-X) ── */
+.help-pop-layers-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 9px;
+  margin-bottom: 9px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.help-pop-layers-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #94a3b8;
+  white-space: nowrap;
+}
+
+.help-pop-layers-pills {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.help-inspector-popover button.help-layer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  transition: all 0.14s ease;
+}
+
+.help-inspector-popover button.help-layer-pill:hover {
+  background: rgba(99, 102, 241, 0.18);
+  border-color: rgba(129, 140, 248, 0.4);
+  color: #ffffff;
+}
+
+.help-inspector-popover button.help-layer-pill.active {
+  background: rgba(99, 102, 241, 0.25);
+  border-color: #818cf8;
+  color: #ffffff;
+}
+
+.layer-pill-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.help-pop-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.help-pop-category {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #818cf8;
+}
+
+.help-pop-kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 4px;
+}
+
+.help-inspector-popover button.help-pop-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  transition: all 0.14s ease;
+}
+
+.help-inspector-popover button.help-pop-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.help-pop-title {
+  margin: 0 0 6px 0;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+}
+
+.help-pop-summary {
+  margin: 0 0 10px 0;
+  font-size: 12.5px;
+  color: #cbd5e1;
+  line-height: 1.55;
+}
+
+.help-pop-details {
+  list-style: none;
+  margin: 0 0 12px 0;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.help-pop-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 11.5px;
+  color: #94a3b8;
+  line-height: 1.45;
+}
+
+.help-pop-bullet {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #6366f1;
+}
+
+.help-pop-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 7px 10px;
+  margin-bottom: 12px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 6px;
+  font-size: 11.5px;
+  color: #c7d2fe;
+  line-height: 1.45;
+}
+
+.help-pop-tip-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #818cf8;
+}
+
+.help-pop-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.help-inspector-popover button.help-pop-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 11px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.help-inspector-popover button.help-pop-btn.primary {
+  background: #6366f1;
+  border: 1px solid #818cf8;
+  color: #ffffff;
+}
+
+.help-inspector-popover button.help-pop-btn.primary:hover {
+  background: #4f46e5;
+}
+
+.help-inspector-popover button.help-pop-btn.secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #e2e8f0;
+}
+
+.help-inspector-popover button.help-pop-btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.help-inspector-popover button.help-pop-btn.ghost {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  margin-left: auto;
+}
+
+.help-inspector-popover button.help-pop-btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+}
+
+.help-pop-shortcut-hint {
+  margin-top: 9px;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.help-pop-shortcut-hint strong {
+  color: #c7d2fe;
+}

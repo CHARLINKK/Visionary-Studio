@@ -1,0 +1,78 @@
+# Dependencies
+node_modules/
+gui/node_modules/
+.venv/
+venv/
+env/
+engine/
+
+# Python cache & compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Testing & Coverage
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.ruff_cache/
+
+# Build & Distribution artifacts
+dist/
+build/*
+!build/uninstaller.nsh
+dist_installer*/
+dist_release/
+dist_electron/
+demo_morph_app/
+*.egg-info/
+/Visionary.exe
+/Visionary Studio.exe
+/*.exe
+
+# Compressed Archives
+*.zip
+*.tar.gz
+*.tar.zst
+*.7z
+*.rar
+
+# Runtime logs & Spool files
+/logs/*
+!/logs/.gitkeep
+*.log
+bore.log
+
+# Runtime generated user dictionaries & local user data
+/global_dictionary.json
+/settings.json
+/library/
+
+# Visionary runtime journals & temporary sync files
+.visionary_reorder_journal*.json*
+*.tmp
+*.temp
+*.bak
+
+# Models & Large Local Data (ancorados na raiz para não ignorar gui/src/data/)
+/data/
+/models/
+/assets/output/
+/scratch/
+/_legacy_scripts_and_temps/
+/restored/
+*.baseline
+
+# IDE, Agent & Local Personal Scripts
+/.agents/
+/AGENTS.md
+/PROJECT.md
+/TESTAR_VISIONARY.bat
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini

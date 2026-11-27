@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+  <title>Visionary Studio — Bandeja</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #1e1e1e;
+      color: #e5e5e5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+      font-size: 12px;
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .flyout-shell {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      background: #1e1e1e;
+      border: 1px solid #333333;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* ── Header Bar ── */
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 9px 12px;
+      background: #181818;
+      border-bottom: 1px solid #2b2b2b;
+      flex-shrink: 0;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-logo-box {
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-title {
+      font-weight: 600;
+      font-size: 12px;
+      color: #f3f3f3;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-pill {
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 600;
+      background: #2a2a2a;
+      color: #a3a3a3;
+      border: 1px solid #383838;
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #a3a3a3;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #737373;
+      transition: background-color 0.2s ease;
+    }
+
+    .status-dot.working {
+      background: #60a5fa;
+      animation: pulseSubtle 1.8s infinite ease-in-out;
+    }
+
+    .status-dot.success {
+      background: #4ec9b0;
+    }
+
+    .status-dot.error {
+      background: #f48771;
+    }
+
+    @keyframes pulseSubtle {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ── Body Content ── */
+    .flyout-body {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      gap: 8px;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── Telemetry / Progress Card ── */
+    .telemetry-card {
+      background: #161616;
+      border: 1px solid #292929;
+      border-radius: 6px;
+      padding: 9px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .telemetry-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .telemetry-step {
+      font-weight: 500;
+      color: #e5e5e5;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 11.5px;
+    }
+
+    .telemetry-pct {
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: #8a8a8a;
+      flex-shrink: 0;
+    }
+
+    .telemetry-pct.working { color: #9cdcfe; }
+    .telemetry-pct.success { color: #4ec9b0; }
+    .telemetry-pct.error { color: #f48771; }
+
+    .progress-track {
+      width: 100%;
+      height: 4px;
+      background: #262626;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: #525252;
+      transition: width 0.25s ease, background-color 0.2s ease;
+    }
+
+    .progress-fill.working { background: #60a5fa; }
+    .progress-fill.success { background: #4ec9b0; }
+    .progress-fill.error { background: #f48771; }
+
+    .telemetry-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 11px;
+      color: #8a8a8a;
+    }
+
+    .chapter-label {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .chapter-label strong {
+      color: #cccccc;
+      font-weight: 500;
+    }
+
+    .cancel-link {
+      background: none;
+      border: none;
+      color: #f48771;
+      font-size: 11px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 0;
+      flex-shrink: 0;
+      display: none;
+    }
+
+    .cancel-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Primary Window Toggle Button ── */
+    .primary-toggle-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 10px;
+      border-radius: 5px;
+      background: #252526;
+      border: 1px solid #353537;
+      color: #f3f3f3;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.12s ease, border-color 0.12s ease;
+    }
+
+    .primary-toggle-btn:hover {
+      background: #2d2d2e;
+      border-color: #454545;
+    }
+
+    .primary-toggle-btn:active {
+      background: #333335;
+    }
+
+    .btn-left {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .kbd-hint {
+      font-size: 10px;
+      color: #808080;
+      font-family: Consolas, monospace;
+    }
+
+    /* ── 2x2 Navigation Grid ── */
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 9px;
+      border-radius: 5px;
+      background: #252526;
+      border: 1px solid #323233;
+      color: #e5e5e5;
+      font-size: 11.5px;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.12s ease, border-color 0.12s ease;
+    }
+
+    .nav-btn:hover {
+      background: #2d2d2d;
+      border-color: #3e3e40;
+    }
+
+    .nav-btn:active {
+      background: #333333;
+    }
+
+    .nav-icon {
+      width: 14px;
+      height: 14px;
+      color: #9e9e9e;
+      flex-shrink: 0;
+    }
+
+    /* ── Recent Chapters Section ── */
+    .section-box {
+      background: #181818;
+      border: 1px solid #292929;
+      border-radius: 5px;
+      padding: 6px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #7a7a7a;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .recent-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      max-height: 68px;
+      overflow-y: auto;
+    }
+
+    .recent-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 6px;
+      border-radius: 4px;
+      background: transparent;
+      border: none;
+      color: #d4d4d4;
+      font-size: 11.5px;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+    }
+
+    .recent-item:hover {
+      background: #252526;
+      color: #ffffff;
+    }
+
+    .recent-item-name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 215px;
+    }
+
+    .recent-empty {
+      font-size: 11px;
+      color: #666666;
+      padding: 3px 4px;
+    }
+
+    /* ── Close Behavior Segmented Control ── */
+    .close-mode-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      padding: 5px 8px;
+      background: #181818;
+      border: 1px solid #292929;
+      border-radius: 5px;
+    }
+
+    .close-mode-label {
+      font-size: 11px;
+      color: #8a8a8a;
+      white-space: nowrap;
+    }
+
+    .close-pills {
+      display: flex;
+      gap: 3px;
+    }
+
+    .close-pill {
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 10.5px;
+      background: #222222;
+      border: 1px solid #303030;
+      color: #8a8a8a;
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+
+    .close-pill:hover {
+      color: #d4d4d4;
+      border-color: #3f3f3f;
+    }
+
+    .close-pill.active {
+      background: #2f2f31;
+      border-color: #525255;
+      color: #f3f3f3;
+      font-weight: 600;
+    }
+
+    /* ── Footer Actions ── */
+    .footer-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-top: 6px;
+      margin-top: auto;
+      border-top: 1px solid #2b2b2b;
+    }
+
+    .footer-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 6px 8px;
+      border-radius: 5px;
+      background: #252526;
+      border: 1px solid #333333;
+      color: #cccccc;
+      font-size: 11.5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+
+    .footer-btn:hover {
+      background: #2d2d2d;
+      color: #ffffff;
+      border-color: #424242;
+    }
+
+    .footer-btn.quit-btn {
+      flex: 0 0 auto;
+      padding: 6px 11px;
+    }
+
+    .footer-btn.quit-btn:hover {
+      background: #3a1d1d;
+      border-color: #5c2b2b;
+      color: #f48771;
+    }
+  </style>
+</head>
+<body>
+  <div class="flyout-shell">
+    <!-- Top Header -->
+    <div class="header-bar">
+      <div class="brand-group">
+        <div class="brand-logo-box">
+          <img src="../assets/logo3d.png" alt="V" style="width: 16px; height: 16px; object-fit: contain;" />
+        </div>
+        <span class="brand-title">Visionary Studio</span>
+        <span class="brand-pill">PRO</span>
+      </div>
+      <div class="status-indicator">
+        <span id="status-dot" class="status-dot"></span>
+        <span id="status-short">Ocioso</span>
+      </div>
+    </div>
+
+    <div class="flyout-body">
+      <!-- Live Telemetry & Progress Card -->
+      <div class="telemetry-card">
+        <div class="telemetry-top">
+          <span id="step-label" class="telemetry-step">Nenhum lote em execução</span>
+          <span id="step-pct" class="telemetry-pct">Pronto</span>
+        </div>
+        <div class="progress-track">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <div class="telemetry-meta">
+          <span class="chapter-label">Cap.: <strong id="active-chapter">Nenhum selecionado</strong></span>
+          <button id="cancel-btn" class="cancel-link" onclick="triggerAction('cancel-job')">Cancelar</button>
+        </div>
+      </div>
+
+      <!-- Primary Show/Hide Window Button -->
+      <button class="primary-toggle-btn" onclick="triggerAction('toggle-app')">
+        <span class="btn-left">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="16" rx="2"/>
+            <line x1="3" y1="9" x2="21" y2="9"/>
+          </svg>
+          <span id="toggle-win-label">Alternar Janela Principal</span>
+        </span>
+        <span class="kbd-hint">Clique</span>
+      </button>
+
+      <!-- 2x2 Quick Navigation Grid -->
+      <div class="nav-grid">
+        <button class="nav-btn" onclick="triggerAction('navigate', 'processamento')">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/>
+          </svg>
+          <span>Abrir Studio</span>
+        </button>
+        <button class="nav-btn" onclick="triggerAction('navigate', 'queue')">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>
+            <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+          </svg>
+          <span>Fila de Lotes</span>
+        </button>
+        <button class="nav-btn" onclick="triggerAction('navigate', 'biblioteca')">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+          <span>Biblioteca</span>
+        </button>
+        <button class="nav-btn" onclick="triggerAction('open-symbols')">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M8 12h.01M12 12h.01M16 12h.01M7 16h10"/>
+          </svg>
+          <span>Símbolos</span>
+        </button>
+      </div>
+
+      <!-- Recent Chapters List -->
+      <div class="section-box">
+        <div class="section-header">
+          <span>Capítulos Recentes</span>
+          <span id="recent-count">0</span>
+        </div>
+        <div id="recent-list" class="recent-list">
+          <div class="recent-empty">Nenhum capítulo aberto recentemente</div>
+        </div>
+      </div>
+
+      <!-- Close Action Behavior Selector -->
+      <div class="close-mode-row" title="Comportamento ao clicar no botão X da janela principal">
+        <span class="close-mode-label">Ao fechar (X):</span>
+        <div class="close-pills">
+          <button id="close-smart" class="close-pill active" onclick="triggerAction('set-close-action', 'smart')">Auto</button>
+          <button id="close-tray" class="close-pill" onclick="triggerAction('set-close-action', 'tray')">Bandeja</button>
+          <button id="close-quit" class="close-pill" onclick="triggerAction('set-close-action', 'quit')">Sair</button>
+        </div>
+      </div>
+
+      <!-- Footer System Bar -->
+      <div class="footer-bar">
+        <button class="footer-btn" onclick="triggerAction('stop-ollama')" title="Encerra o servidor Ollama e libera a memória VRAM da GPU">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/>
+          </svg>
+          <span>Liberar VRAM</span>
+        </button>
+        <button class="footer-btn" style="flex: 0 0 auto; padding: 6px 9px;" onclick="triggerAction('open-logs')" title="Abrir pasta de logs no Windows Explorer">
+          <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+          </svg>
+        </button>
+        <button class="footer-btn quit-btn" onclick="triggerAction('quit')" title="Encerrar Visionary Studio completamente">
+          <span>Encerrar</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function triggerAction(action, payload) {
+      if (window.electronAPI && typeof window.electronAPI.sendTrayFlyoutAction === 'function') {
+        window.electronAPI.sendTrayFlyoutAction(action, payload);
+      }
+    }
+
+    function renderTrayState(st) {
+      if (!st) return;
+
+      const dot = document.getElementById('status-dot');
+      const shortText = document.getElementById('status-short');
+      const stepLabel = document.getElementById('step-label');
+      const stepPct = document.getElementById('step-pct');
+      const fill = document.getElementById('progress-fill');
+      const activeChap = document.getElementById('active-chapter');
+      const cancelBtn = document.getElementById('cancel-btn');
+      const toggleLabel = document.getElementById('toggle-win-label');
+
+      const badge = st.badgeState || (st.isWorking ? 'working' : 'idle');
+      dot.className = 'status-dot ' + (badge !== 'idle' ? badge : '');
+
+      if (badge === 'working') {
+        shortText.textContent = 'Ativo';
+        stepLabel.textContent = st.statusText || 'Processando lote...';
+        const pct = typeof st.progressPercent === 'number' ? st.progressPercent : 10;
+        stepPct.textContent = pct + '%';
+        stepPct.className = 'telemetry-pct working';
+        fill.className = 'progress-fill working';
+        fill.style.width = Math.max(4, Math.min(100, pct)) + '%';
+        cancelBtn.style.display = 'inline';
+      } else if (badge === 'success') {
+        shortText.textContent = 'Concluído';
+        stepLabel.textContent = st.statusText || 'Lote finalizado com sucesso';
+        stepPct.textContent = '100%';
+        stepPct.className = 'telemetry-pct success';
+        fill.className = 'progress-fill success';
+        fill.style.width = '100%';
+        cancelBtn.style.display = 'none';
+      } else if (badge === 'error') {
+        shortText.textContent = 'Alerta';
+        stepLabel.textContent = st.statusText || 'Finalizado com alertas';
+        stepPct.textContent = 'Alerta';
+        stepPct.className = 'telemetry-pct error';
+        fill.className = 'progress-fill error';
+        fill.style.width = '100%';
+        cancelBtn.style.display = 'none';
+      } else {
+        shortText.textContent = 'Ocioso';
+        stepLabel.textContent = (!st.statusText || st.statusText === 'Ocioso')
+          ? 'Nenhum lote em execução'
+          : st.statusText;
+        stepPct.textContent = 'Pronto';
+        stepPct.className = 'telemetry-pct';
+        fill.className = 'progress-fill';
+        fill.style.width = '0%';
+        cancelBtn.style.display = 'none';
+      }
+
+      activeChap.textContent = st.activeChapterName || 'Nenhum selecionado';
+      toggleLabel.textContent = st.isWindowVisible ? 'Ocultar para a Bandeja' : 'Abrir Visionary Studio';
+
+      // Close mode pills
+      ['smart', 'tray', 'quit'].forEach((mode) => {
+        const el = document.getElementById('close-' + mode);
+        if (el) {
+          el.className = 'close-pill' + (st.closeAction === mode ? ' active' : '');
+        }
+      });
+
+      // Recent chapters
+      const recents = Array.isArray(st.recentChapters) ? st.recentChapters : [];
+      document.getElementById('recent-count').textContent = String(recents.length);
+      const listEl = document.getElementById('recent-list');
+      listEl.innerHTML = '';
+
+      if (recents.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'recent-empty';
+        empty.textContent = 'Nenhum capítulo aberto recentemente';
+        listEl.appendChild(empty);
+      } else {
+        recents.slice(0, 3).forEach((chap) => {
+          const btn = document.createElement('button');
+          btn.className = 'recent-item';
+          btn.title = chap.path || '';
+          btn.onclick = () => triggerAction('open-recent', chap);
+
+          const nameSpan = document.createElement('span');
+          nameSpan.className = 'recent-item-name';
+          nameSpan.textContent = chap.name || chap.path;
+
+          const arrowSpan = document.createElement('span');
+          arrowSpan.style.color = '#666666';
+          arrowSpan.style.fontSize = '10.5px';
+          arrowSpan.textContent = 'Abrir ›';
+
+          btn.appendChild(nameSpan);
+          btn.appendChild(arrowSpan);
+          listEl.appendChild(btn);
+        });
+      }
+    }
+
+    if (window.electronAPI && typeof window.electronAPI.onTrayFlyoutState === 'function') {
+      window.electronAPI.onTrayFlyoutState((state) => {
+        renderTrayState(state);
+      });
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        triggerAction('close-flyout');
+      }
+    });
+  </script>
+</body>
+</html>

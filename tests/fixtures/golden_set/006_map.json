@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "description": "Golden Set Ground Truth - Page 006 (Splash Page / Full Bleed)",
+  "image_file": "006.jpg",
+  "width": 1732,
+  "height": 2560,
+  "panels": [
+    {
+      "id": 1,
+      "order": 1,
+      "box": [0, 0, 1732, 2560],
+      "description": "Splash page inteira (Marionete anatômica de boxeador suspensa por cordas)"
+    }
+  ],
+  "boxes": [
+    {
+      "id": 1,
+      "order": 1,
+      "panel_id": 1,
+      "x1": 1400,
+      "y1": 154,
+      "x2": 1600,
+      "y2": 743,
+      "label": "text_bubble",
+      "text": "...THE PROMOT- ERS.",
+      "translated_text": "...OS PROMOTORES.",
+      "is_sfx": false
+    }
+  ]
+}

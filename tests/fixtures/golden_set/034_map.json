@@ -1,0 +1,236 @@
+{
+  "version": 2,
+  "description": "Golden Set Ground Truth - Page 034 (Two-Row RTL Intra-Panel Sorting & Ellipsis Bubble Detection)",
+  "image_file": "034.jpg",
+  "width": 1487,
+  "height": 2100,
+  "panels": [
+    {
+      "id": 1,
+      "order": 1,
+      "box": [719, 10, 1463, 999],
+      "description": "Painel 1 Direito Superior - Conversa dentro do carro com duas fileiras de 3 balões RTL"
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "box": [793, 1021, 1448, 1417],
+      "description": "Painel 2 Direito Meio - Silêncio tenso com balão de reticências"
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "box": [102, 10, 710, 720],
+      "description": "Painel 3 Esquerdo Superior - Diálogo externo na rua"
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "box": [102, 740, 780, 1396],
+      "description": "Painel 4 Esquerdo Meio - Continuação do diálogo da calçada"
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "box": [97, 1436, 1411, 2096],
+      "description": "Painel 5 Base - Confronto verbal explosivo com 4 balões grandes"
+    }
+  ],
+  "boxes": [
+    {
+      "id": 1,
+      "order": 1,
+      "panel_id": 1,
+      "x1": 1203,
+      "y1": 63,
+      "x2": 1364,
+      "y2": 367,
+      "label": "text_bubble",
+      "text": "SO WHERE ARE WE HEADING NOW?",
+      "translated_text": "ENTÃO, PARA ONDE ESTAMOS INDO AGORA?",
+      "is_sfx": false
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "panel_id": 1,
+      "x1": 962,
+      "y1": 90,
+      "x2": 1148,
+      "y2": 307,
+      "label": "text_bubble",
+      "text": "BACK TO THE OLD DISTRICT.",
+      "translated_text": "DE VOLTA PARA O DISTRITO ANTIGO.",
+      "is_sfx": false
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "panel_id": 1,
+      "x1": 721,
+      "y1": 94,
+      "x2": 912,
+      "y2": 456,
+      "label": "text_bubble",
+      "text": "THERE'S SOMEONE YOU NEED TO MEET BEFORE THE MATCH.",
+      "translated_text": "HÁ ALGUÉM QUE VOCÊ PRECISA CONHECER ANTES DA LUTA.",
+      "is_sfx": false
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "panel_id": 1,
+      "x1": 1196,
+      "y1": 693,
+      "x2": 1322,
+      "y2": 965,
+      "label": "text_bubble",
+      "text": "A FORMER PRO?",
+      "translated_text": "UM EX-PROFISSIONAL?",
+      "is_sfx": false
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "panel_id": 1,
+      "x1": 974,
+      "y1": 700,
+      "x2": 1161,
+      "y2": 984,
+      "label": "text_bubble",
+      "text": "BETTER THAN THAT. HE KNOWS HIS STYLE INSIDE OUT.",
+      "translated_text": "MELHOR QUE ISSO. ELE CONHECE AQUELE ESTILO DE COR E SALTEADO.",
+      "is_sfx": false
+    },
+    {
+      "id": 6,
+      "order": 6,
+      "panel_id": 1,
+      "x1": 773,
+      "y1": 700,
+      "x2": 968,
+      "y2": 991,
+      "label": "text_bubble",
+      "text": "JUST KEEP QUIET AND WATCH HOW HE MOVES.",
+      "translated_text": "APENAS FIQUE QUIETO E OBSERVE COMO ELE SE MOVE.",
+      "is_sfx": false
+    },
+    {
+      "id": 7,
+      "order": 7,
+      "panel_id": 3,
+      "x1": 498,
+      "y1": 323,
+      "x2": 688,
+      "y2": 699,
+      "label": "text_bubble",
+      "text": "YOU REALLY THINK ONE DAY IS ENOUGH?",
+      "translated_text": "VOCÊ REALMENTE ACHA QUE UM DIA É O BASTANTE?",
+      "is_sfx": false
+    },
+    {
+      "id": 8,
+      "order": 8,
+      "panel_id": 3,
+      "x1": 130,
+      "y1": 94,
+      "x2": 301,
+      "y2": 486,
+      "label": "text_bubble",
+      "text": "IT HAS TO BE ENOUGH.",
+      "translated_text": "TEM QUE SER O BASTANTE.",
+      "is_sfx": false
+    },
+    {
+      "id": 9,
+      "order": 9,
+      "panel_id": 4,
+      "x1": 112,
+      "y1": 516,
+      "x2": 367,
+      "y2": 1042,
+      "label": "text_bubble",
+      "text": "IF YOU GO IN THERE WITH YOUR CURRENT RHYTHM, YOU WON'T LAST TWO ROUNDS.",
+      "translated_text": "SE VOCÊ ENTRAR LÁ COM O SEU RITMO ATUAL, NÃO VAI DURAR DOIS ROUNDS.",
+      "is_sfx": false
+    },
+    {
+      "id": 10,
+      "order": 10,
+      "panel_id": 2,
+      "x1": 1226,
+      "y1": 1180,
+      "x2": 1310,
+      "y2": 1367,
+      "label": "text_bubble",
+      "text": "...",
+      "translated_text": "...",
+      "is_sfx": false
+    },
+    {
+      "id": 11,
+      "order": 11,
+      "panel_id": 4,
+      "x1": 240,
+      "y1": 1022,
+      "x2": 421,
+      "y2": 1394,
+      "label": "text_bubble",
+      "text": "YEAH, I KNOW THAT ALREADY.",
+      "translated_text": "É, EU JÁ SEI DISSO.",
+      "is_sfx": false
+    },
+    {
+      "id": 12,
+      "order": 12,
+      "panel_id": 5,
+      "x1": 1250,
+      "y1": 1488,
+      "x2": 1369,
+      "y2": 1892,
+      "label": "text_bubble",
+      "text": "THEN STOP HESITATING!",
+      "translated_text": "ENTÃO PARE DE HESITAR!",
+      "is_sfx": false
+    },
+    {
+      "id": 13,
+      "order": 13,
+      "panel_id": 5,
+      "x1": 986,
+      "y1": 1689,
+      "x2": 1165,
+      "y2": 2019,
+      "label": "text_bubble",
+      "text": "STEP IN AND TAKE WHAT'S YOURS!",
+      "translated_text": "ENTRE LÁ E PEGUE O QUE É SEU!",
+      "is_sfx": false
+    },
+    {
+      "id": 14,
+      "order": 14,
+      "panel_id": 5,
+      "x1": 454,
+      "y1": 1428,
+      "x2": 628,
+      "y2": 1752,
+      "label": "text_bubble",
+      "text": "WHO SAID I WAS HESITATING?!",
+      "translated_text": "QUEM DISSE QUE EU ESTAVA HESITANDO?!",
+      "is_sfx": false
+    },
+    {
+      "id": 15,
+      "order": 15,
+      "panel_id": 5,
+      "x1": 91,
+      "y1": 1411,
+      "x2": 453,
+      "y2": 2048,
+      "label": "text_bubble",
+      "text": "I'M READY TO TEAR THAT RING APART RIGHT NOW!!",
+      "translated_text": "ESTOU PRONTO PARA DESTRUIR AQUELE RINGUE AGORA MESMO!!",
+      "is_sfx": false
+    }
+  ]
+}

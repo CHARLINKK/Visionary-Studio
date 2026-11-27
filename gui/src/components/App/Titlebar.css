@@ -1,0 +1,172 @@
+/* =========================================================================
+   VISIONARY STUDIO - TITLEBAR COMPONENT STYLES
+   ========================================================================= */
+
+.custom-titlebar {
+  height: 38px;
+  background: var(--bg-panel);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  user-select: none;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0 0 0 16px;
+  position: relative;
+  -webkit-app-region: drag;
+}
+
+.titlebar-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 12px;
+  -webkit-app-region: no-drag;
+}
+
+.titlebar-logo {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titlebar-logo-img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform .2s cubic-bezier(.16,1,.3,1), filter .2s ease;
+}
+
+:root[data-theme='warm-paper'] .titlebar-logo-img,
+:root[data-theme='light'] .titlebar-logo-img,
+:root[data-theme='e-ink'] .titlebar-logo-img {
+  filter: invert(1);
+}
+
+.titlebar-info:hover .titlebar-logo-img {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 6px #8b5cf699);
+}
+
+:root[data-theme='warm-paper'] .titlebar-info:hover .titlebar-logo-img,
+:root[data-theme='light'] .titlebar-info:hover .titlebar-logo-img,
+:root[data-theme='e-ink'] .titlebar-info:hover .titlebar-logo-img {
+  transform: scale(1.08);
+  filter: invert(1) drop-shadow(0 0 5px rgba(124, 58, 237, 0.4));
+}
+
+.logo-letter {
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  line-height: 1;
+}
+
+.titlebar-brand {
+  font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  user-select: none;
+  line-height: 1;
+}
+
+:root[data-theme='light'] .titlebar-brand,
+:root[data-theme='warm-paper'] .titlebar-brand {
+  color: #0f172a;
+}
+
+.titlebar-badge {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35), 0 0 8px rgba(139, 92, 246, 0.35);
+  padding: 1px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.6px;
+  line-height: 1.3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme=light] .titlebar-badge,
+[data-theme=warm-paper] .titlebar-badge {
+  color: #ffffff;
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.titlebar-drag-region {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.titlebar-active-file {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  max-width: 480px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.titlebar-controls {
+  display: flex;
+  height: 100%;
+  -webkit-app-region: no-drag;
+  position: relative;
+  z-index: 1001;
+}
+
+.win-btn {
+  -webkit-app-region: no-drag;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  width: 44px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  outline: none;
+}
+
+.win-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-main);
+}
+
+.win-btn.win-btn-close:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.win-btn:active {
+  background: var(--bg-surface-elevated);
+}

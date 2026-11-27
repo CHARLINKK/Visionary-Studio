@@ -1,0 +1,157 @@
+{
+  "version": 2,
+  "description": "Golden Set Ground Truth - Page 027 (Complex Grid / Multi-character Dialogue Flow)",
+  "image_file": "027.jpg",
+  "width": 1483,
+  "height": 2100,
+  "panels": [
+    {
+      "id": 1,
+      "order": 1,
+      "box": [0, 0, 1369, 756],
+      "description": "Tier 1 - Macro do rosto de Hanabi na cama em choque e suando"
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "box": [994, 791, 1371, 1636],
+      "description": "Tier 2 Coluna 1 (Direita) - Médico em pé explicando o diagnóstico"
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "box": [704, 790, 981, 1183],
+      "description": "Tier 2 Coluna 2 Topo - Hanabi com as mãos no queixo olhando para baixo"
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "box": [703, 1216, 981, 1634],
+      "description": "Tier 2 Coluna 2 Base - Hanabi passando o dedo nos lábios"
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "box": [402, 791, 686, 1634],
+      "description": "Tier 2 Coluna 3 - Perfil de Hanabi olhando sério"
+    },
+    {
+      "id": 6,
+      "order": 6,
+      "box": [2, 792, 390, 1634],
+      "description": "Tier 2 Coluna 4 (Esquerda) - Hanabi encarando o médico com a mão aberta"
+    },
+    {
+      "id": 7,
+      "order": 7,
+      "box": [0, 1668, 1378, 2099],
+      "description": "Tier 3 - Hanabi apontando para o dente faltando conversando com o médico"
+    }
+  ],
+  "boxes": [
+    {
+      "id": 1,
+      "order": 1,
+      "panel_id": 1,
+      "x1": 1077,
+      "y1": 99,
+      "x2": 1199,
+      "y2": 268,
+      "label": "text_bubble",
+      "text": "I...",
+      "translated_text": "EU...",
+      "is_sfx": false
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "panel_id": 1,
+      "x1": 128,
+      "y1": 554,
+      "x2": 272,
+      "y2": 758,
+      "label": "text_bubble",
+      "text": "... LOST.",
+      "translated_text": "...PERDI.",
+      "is_sfx": false
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "panel_id": 2,
+      "x1": 1186,
+      "y1": 789,
+      "x2": 1372,
+      "y2": 1132,
+      "label": "text_bubble",
+      "text": "IT SEEMS YOUR MEMORY IS STILL A BIT HAZY.",
+      "translated_text": "PARECE QUE SUA MEMÓRIA AINDA ESTÁ UM POUCO CONFUSA.",
+      "is_sfx": false
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "panel_id": 2,
+      "x1": 996,
+      "y1": 785,
+      "x2": 1190,
+      "y2": 1130,
+      "label": "text_bubble",
+      "text": "DON'T PUSH YOUR- SELF... LET'S TAKE IT STEP BY STEP.",
+      "translated_text": "NÃO SE FORCE... VAMOS COM CALMA, PASSO A PASSO.",
+      "is_sfx": false
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "panel_id": 6,
+      "x1": 153,
+      "y1": 792,
+      "x2": 334,
+      "y2": 999,
+      "label": "text_bubble",
+      "text": "HEY, ISN'T DOC? THIS ...",
+      "translated_text": "EI, DOUTOR? ISSO NÃO É...",
+      "is_sfx": false
+    },
+    {
+      "id": 6,
+      "order": 6,
+      "panel_id": 6,
+      "x1": 190,
+      "y1": 1340,
+      "x2": 324,
+      "y2": 1579,
+      "label": "text_bubble",
+      "text": "...KINDA STRANGE ?",
+      "translated_text": "...MEIO ESTRANHO?",
+      "is_sfx": false
+    },
+    {
+      "id": 7,
+      "order": 7,
+      "panel_id": 7,
+      "x1": 1161,
+      "y1": 1675,
+      "x2": 1308,
+      "y2": 1984,
+      "label": "text_bubble",
+      "text": "JUST YESTER- DAY...",
+      "translated_text": "AINDA ONTEM...",
+      "is_sfx": false
+    },
+    {
+      "id": 8,
+      "order": 8,
+      "panel_id": 7,
+      "x1": 158,
+      "y1": 1679,
+      "x2": 320,
+      "y2": 2051,
+      "label": "text_bubble",
+      "text": "I LOST THIS TOOTH ...",
+      "translated_text": "EU PERDI ESSE DENTE...",
+      "is_sfx": false
+    }
+  ]
+}

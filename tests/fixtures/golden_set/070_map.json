@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "description": "Golden Set Ground Truth - Page 070 (Climax Splash / Text Free Overlay on Dark Complex Art)",
+  "image_file": "070.jpg",
+  "width": 1487,
+  "height": 2100,
+  "panels": [
+    {
+      "id": 1,
+      "order": 1,
+      "box": [0, 0, 1487, 2100],
+      "description": "Splash page de clímax inteira (Harima com marionetes na cabeça proclamando sua ambição)"
+    }
+  ],
+  "boxes": [
+    {
+      "id": 1,
+      "order": 1,
+      "panel_id": 1,
+      "x1": 230,
+      "y1": 20,
+      "x2": 1340,
+      "y2": 260,
+      "label": "text_free",
+      "text": "I'LL MAKE THEM DANCE IN THE PALM OF MY HANDS...",
+      "translated_text": "EU VOU FAZER ELES DANÇAREM NA PALMA DA MINHA MÃO...",
+      "is_sfx": false
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "panel_id": 1,
+      "x1": 340,
+      "y1": 1920,
+      "x2": 1260,
+      "y2": 2060,
+      "label": "text_free",
+      "text": "...UNTIL THEY DIE.",
+      "translated_text": "...ATÉ MORREREM.",
+      "is_sfx": false
+    }
+  ]
+}

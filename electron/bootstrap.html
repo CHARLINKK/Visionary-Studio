@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+  <title>Visionary Studio - Inicialização</title>
+  <style>
+    :root,
+    :root[data-theme="dark"] {
+      --bg: #0c0d12;
+      --panel: #13151e;
+      --surface: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #f8fafc;
+      --muted: #8b95a5;
+      --dim: #475569;
+      --accent: #8b5cf6;
+      --pct-main: rgba(248, 250, 252, 0.24);
+      --pct-sub: rgba(248, 250, 252, 0.12);
+      --pattern: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      --pattern-size: 24px 24px;
+      --wm-opacity: 0.065;
+      --wm-filter: grayscale(1) contrast(1.2);
+      --logo-filter: none;
+      --rail-radius: 99px;
+      --btn-radius: 8px;
+      --frame-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    :root[data-theme="warm-paper"] {
+      --bg: #f5efe4;
+      --panel: #fcf9f2;
+      --surface: rgba(62, 40, 18, 0.14);
+      --border: rgba(62, 40, 18, 0.22);
+      --text: #1c1208;
+      --muted: #6e563f;
+      --dim: #9c846c;
+      --pct-main: rgba(28, 18, 8, 0.22);
+      --pct-sub: rgba(28, 18, 8, 0.12);
+      --pattern: radial-gradient(rgba(62, 40, 18, 0.09) 1px, transparent 1px);
+      --pattern-size: 14px 14px;
+      --wm-opacity: 0.065;
+      --wm-filter: invert(1) sepia(0.6) contrast(1.4);
+      --logo-filter: invert(0.88) sepia(0.35) contrast(1.35);
+      --rail-radius: 2px;
+      --btn-radius: 3px;
+      --frame-shadow: none;
+    }
+
+    :root[data-theme="oled"] {
+      --bg: #000000;
+      --panel: #060606;
+      --surface: rgba(255, 255, 255, 0.12);
+      --border: rgba(255, 255, 255, 0.2);
+      --text: #ffffff;
+      --muted: #8e8e93;
+      --dim: #48484a;
+      --pct-main: rgba(255, 255, 255, 0.28);
+      --pct-sub: rgba(255, 255, 255, 0.14);
+      --pattern: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      --pattern-size: 28px 28px;
+      --wm-opacity: 0.065;
+      --wm-filter: contrast(1.5);
+      --logo-filter: contrast(1.25);
+      --rail-radius: 0px;
+      --btn-radius: 0px;
+      --frame-shadow: none;
+    }
+
+    :root[data-theme="e-ink"] {
+      --bg: #191c21;
+      --panel: #21252c;
+      --surface: rgba(226, 230, 237, 0.1);
+      --border: rgba(226, 230, 237, 0.11);
+      --text: #e2e6ed;
+      --muted: #8b93a0;
+      --dim: #58606c;
+      --pct-main: rgba(226, 230, 237, 0.2);
+      --pct-sub: rgba(226, 230, 237, 0.1);
+      --pattern: none;
+      --pattern-size: 20px 20px;
+      --wm-opacity: 0.055;
+      --wm-filter: grayscale(1);
+      --logo-filter: opacity(0.9);
+      --rail-radius: 99px;
+      --btn-radius: 10px;
+      --frame-shadow: none;
+    }
+
+    :root[data-theme="neo-tokyo"] {
+      --bg: #060a12;
+      --panel: #0b1220;
+      --surface: rgba(56, 189, 248, 0.14);
+      --border: rgba(56, 189, 248, 0.22);
+      --text: #ecfeff;
+      --muted: #67e8f9;
+      --dim: #0369a1;
+      --pct-main: rgba(125, 211, 252, 0.26);
+      --pct-sub: rgba(56, 189, 248, 0.14);
+      --pattern: linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+      --pattern-size: 26px 26px;
+      --wm-opacity: 0.07;
+      --wm-filter: sepia(1) hue-rotate(165deg) saturate(3);
+      --logo-filter: none;
+      --rail-radius: 2px;
+      --btn-radius: 3px;
+      --frame-shadow: inset 3px 0 0 var(--accent);
+    }
+
+    :root[data-theme="light"] {
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --surface: rgba(15, 23, 42, 0.09);
+      --border: rgba(15, 23, 42, 0.1);
+      --text: #0f172a;
+      --muted: #64748b;
+      --dim: #94a3b8;
+      --pct-main: rgba(15, 23, 42, 0.18);
+      --pct-sub: rgba(15, 23, 42, 0.09);
+      --pattern: radial-gradient(rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+      --pattern-size: 22px 22px;
+      --wm-opacity: 0.055;
+      --wm-filter: invert(1) contrast(1.3);
+      --logo-filter: invert(0.85) contrast(1.35);
+      --rail-radius: 99px;
+      --btn-radius: 8px;
+      --frame-shadow: none;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--bg);
+      background-image: var(--pattern);
+      background-size: var(--pattern-size);
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: var(--frame-shadow);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 26px 28px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    body.fading {
+      opacity: 0 !important;
+      transition: opacity 0.38s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    /* Giant Architectural Background Watermark on the Left */
+    .watermark-logo {
+      position: absolute;
+      left: -38px;
+      top: -24px;
+      width: 256px;
+      height: 256px;
+      object-fit: contain;
+      opacity: var(--wm-opacity);
+      filter: var(--wm-filter);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Top Minimal Bar */
+    .top-bar {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      -webkit-app-region: drag;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      filter: var(--logo-filter);
+    }
+
+    .brand-name {
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .win-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      -webkit-app-region: no-drag;
+    }
+
+    .win-btn {
+      width: 24px;
+      height: 24px;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      opacity: 0.4;
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.15s ease;
+    }
+
+    .win-btn:hover {
+      opacity: 1;
+    }
+
+    /* Center Asymmetric Monolith Area */
+    .center-area {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-top: auto;
+      margin-bottom: auto;
+      padding-top: 18px;
+      gap: 16px;
+    }
+
+    .title-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+      color: var(--text);
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 310px;
+    }
+
+    .telemetry-detail {
+      font-family: Consolas, "JetBrains Mono", monospace;
+      font-size: 10.5px;
+      color: var(--dim);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 320px;
+      min-height: 14px;
+    }
+
+    /* Per-Theme Percentage Counter Displays */
+    .theme-pct {
+      display: none;
+      flex-shrink: 0;
+    }
+
+    :root[data-theme="dark"] .pct-for-dark,
+    :root:not([data-theme]) .pct-for-dark {
+      display: flex;
+    }
+    :root[data-theme="warm-paper"] .pct-for-warm {
+      display: flex;
+    }
+    :root[data-theme="oled"] .pct-for-oled {
+      display: flex;
+    }
+    :root[data-theme="e-ink"] .pct-for-eink {
+      display: flex;
+    }
+    :root[data-theme="neo-tokyo"] .pct-for-neotokyo {
+      display: flex;
+    }
+    :root[data-theme="light"] .pct-for-light {
+      display: flex;
+    }
+
+    /* 1. Pro Studio (Dark) — Glass Pill */
+    .pro-glass-pill {
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      align-items: center;
+      gap: 10px;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% {
+        opacity: 0.65;
+        transform: scale(1);
+        box-shadow: 0 0 0 0 var(--accent);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.18);
+        box-shadow: 0 0 8px 2px var(--accent);
+      }
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+
+    .pill-stage {
+      font-family: Consolas, "JetBrains Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .pill-divider {
+      width: 1px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .pill-val {
+      font-family: Consolas, "JetBrains Mono", monospace;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* 2. Mangaká Atelier (Warm-Paper) — Editorial Chapter Serif */
+    .warm-chapter-box {
+      flex-direction: column;
+      align-items: flex-end;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .warm-chapter-tag {
+      font-size: 11px;
+      font-style: italic;
+      letter-spacing: 0.05em;
+      color: var(--dim);
+    }
+
+    .warm-chapter-nums {
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+    }
+
+    .warm-num-big {
+      font-size: 46px;
+      font-style: italic;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      color: var(--pct-main);
+    }
+
+    .warm-num-sub {
+      font-size: 14px;
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    /* 3. Cyber CAD (OLED) — Technical Hairline */
+    .oled-cad-box {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2px;
+    }
+
+    .oled-cad-tag {
+      font-family: Consolas, "JetBrains Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: var(--dim);
+    }
+
+    .oled-cad-num {
+      font-family: Consolas, "JetBrains Mono", monospace;
+      font-size: 42px;
+      font-weight: 300;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      color: transparent;
+      -webkit-text-stroke: 1.3px var(--pct-main);
+    }
+
+    .oled-cad-unit {
+      font-family: Consolas, "JetBrains Mono", monospace;
+      font-size: 12px;
+      -webkit-text-stroke: 0;
+      color: var(--accent);
+      margin-left: 3px;
+    }
+
+    /* 4. E-Ink Matte — Soft Reading Pill */
+    .eink-matte-pill {
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* 5. Neo-Tokyo — Sci-Fi HUD Telemetry */
+    .neotokyo-hud-box {
+      flex-direction: column;
+      align-items: flex-end;
+      padding-right: 10px;
+      border-right: 2px solid var(--accent);
+    }
+
+    .neotokyo-hud-tag {
+      font-family: Consolas, "JetBrains Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    .neotokyo-hud-num {
+      font-family: Consolas, "JetBrains Mono", monospace;
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: var(--pct-main);
+    }
+
+    /* 6. Editorial Swiss (Light) — Magazine Index */
+    .swiss-index-box {
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .swiss-meta {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      padding-bottom: 3px;
+    }
+
+    .swiss-stage {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+
+    .swiss-label {
+      font-family: Consolas, monospace;
+      font-size: 10px;
+      color: var(--dim);
+    }
+
+    .swiss-Rule {
+      width: 1px;
+      height: 34px;
+      background: var(--border);
+    }
+
+    .swiss-num {
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 0.86;
+      letter-spacing: -0.05em;
+      color: var(--pct-main);
+    }
+
+    /* Bottom: Unified Cinematic Horizon Track (Padrão Ouro) */
+    .horizon-section {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 10px;
+    }
+
+    .cinematic-track {
+      width: 100%;
+      height: 4px;
+      background: var(--surface);
+      border-radius: var(--rail-radius);
+      overflow: hidden;
+      position: relative;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    .cinematic-fill {
+      height: 100%;
+      width: 10%;
+      background: linear-gradient(90deg, rgba(139, 92, 246, 0.25) 0%, var(--accent) 100%);
+      border-radius: var(--rail-radius);
+      position: relative;
+      box-shadow: 0 0 12px 1px var(--accent);
+      will-change: width;
+    }
+
+    .glow-pin {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 8px 2px var(--accent), 0 0 3px #ffffff;
+      opacity: 0.95;
+      pointer-events: none;
+    }
+
+    .shimmer-sweep {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.35) 50%,
+        transparent 100%
+      );
+      transform: translateX(-100%);
+      animation: shimmerLoop 2.2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+
+    @keyframes shimmerLoop {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(200%); }
+    }
+
+    /* Fallback Error & Manual Recovery View */
+    .error-panel {
+      position: relative;
+      z-index: 10;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .error-box {
+      padding: 8px 12px;
+      border-radius: var(--btn-radius);
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.28);
+      color: #f87171;
+      font-size: 11.5px;
+      line-height: 1.38;
+      max-height: 76px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      user-select: text;
+    }
+
+    .actions-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      padding: 7px 12px;
+      border-radius: var(--btn-radius);
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      transition: opacity 0.15s ease;
+    }
+
+    .btn-action:hover {
+      opacity: 0.88;
+    }
+
+    .btn-action.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Giant Architectural Watermark V on the Left -->
+  <img id="watermarkLogoImg" class="watermark-logo" src="../assets/icon.png" alt="" />
+
+  <!-- Top Minimal Bar -->
+  <div class="top-bar">
+    <div class="brand-group">
+      <img id="brandLogoImg" class="brand-logo" src="../assets/logo3d.png" alt="Visionary" />
+      <span class="brand-name">Visionary</span>
+    </div>
+    <div class="win-controls">
+      <button class="win-btn" id="winMinimize" title="Minimizar">─</button>
+      <button class="win-btn" id="winClose" title="Fechar">✕</button>
+    </div>
+  </div>
+
+  <!-- Center Asymmetric Monolith -->
+  <div class="center-area" id="centerArea">
+    <div class="title-stack">
+      <h1 id="mainTitle">Iniciando Estúdio</h1>
+      <p class="subtitle" id="statusMessage">Verificando ambiente isolado...</p>
+      <p class="telemetry-detail" id="telemetryDetail"></p>
+    </div>
+
+    <!-- 1. Pro Studio (Dark) — Glass Pill -->
+    <div class="theme-pct pct-for-dark pro-glass-pill" id="pctDarkBox">
+      <span class="pill-dot"></span>
+      <span class="pill-stage" id="darkStageText">VISIONARY</span>
+      <span class="pill-divider"></span>
+      <span class="pill-val" id="darkPctText">10%</span>
+    </div>
+
+    <!-- 2. Mangaká Atelier (Warm-Paper) -->
+    <div class="theme-pct pct-for-warm warm-chapter-box">
+      <span class="warm-chapter-tag" id="warmStageText">Atelier</span>
+      <div class="warm-chapter-nums">
+        <span class="warm-num-big" id="warmPctText">10</span>
+        <span class="warm-num-sub">/100</span>
+      </div>
+    </div>
+
+    <!-- 3. Cyber CAD (OLED) -->
+    <div class="theme-pct pct-for-oled oled-cad-box">
+      <span class="oled-cad-tag" id="oledStageText">SYS // READY</span>
+      <div>
+        <span class="oled-cad-num" id="oledPctText">10</span><span class="oled-cad-unit">%</span>
+      </div>
+    </div>
+
+    <!-- 4. E-Ink Matte -->
+    <div class="theme-pct pct-for-eink eink-matte-pill">
+      <span id="einkPctText">10</span>
+      <span style="color: var(--dim);">/ 100</span>
+    </div>
+
+    <!-- 5. Neo-Tokyo -->
+    <div class="theme-pct pct-for-neotokyo neotokyo-hud-box">
+      <span class="neotokyo-hud-tag" id="neoStageText">BOOT // SYNC</span>
+      <span class="neotokyo-hud-num" id="neoPctText">10%</span>
+    </div>
+
+    <!-- 6. Editorial Swiss (Light) -->
+    <div class="theme-pct pct-for-light swiss-index-box">
+      <div class="swiss-meta">
+        <span class="swiss-stage" id="swissStageText">VISIONARY</span>
+        <span class="swiss-label">STUDIO</span>
+      </div>
+      <div class="swiss-Rule"></div>
+      <span class="swiss-num" id="swissPctText">10</span>
+    </div>
+  </div>
+
+  <!-- Bottom: Unified Cinematic Progress Track (Padrão Ouro) -->
+  <div class="horizon-section" id="progressView">
+    <div class="cinematic-track">
+      <div class="cinematic-fill" id="mainFill">
+        <div class="glow-pin"></div>
+        <div class="shimmer-sweep"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error / Manual Fallback Panel (Hidden during normal boot) -->
+  <div class="error-panel" id="optionsView">
+    <div class="error-box" id="errorBox"></div>
+    <div class="actions-row">
+      <button class="btn-action primary" id="btnSelectArchive">Selecionar Pacote</button>
+      <button class="btn-action" id="btnAutoSetup">Tentar Novamente</button>
+      <button class="btn-action" id="btnCheckAgain">Verificar Python</button>
+      <button class="btn-action" id="btnOpenLogs">Abrir Logs</button>
+    </div>
+  </div>
+
+  <script>
+    // Apply user theme and accent passed from Electron main process query string
+    (function initThemeFromQuery() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const theme = params.get('theme');
+        const accent = params.get('accent');
+        if (theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        if (accent) {
+          document.documentElement.style.setProperty('--accent', accent);
+        }
+      } catch (_) {}
+    })();
+
+    const optionsView = document.getElementById('optionsView');
+    const progressView = document.getElementById('progressView');
+    const statusMessage = document.getElementById('statusMessage');
+    const telemetryDetail = document.getElementById('telemetryDetail');
+    const errorBox = document.getElementById('errorBox');
+    const mainTitle = document.getElementById('mainTitle');
+    const mainFill = document.getElementById('mainFill');
+
+    const darkPctText = document.getElementById('darkPctText');
+    const warmPctText = document.getElementById('warmPctText');
+    const oledPctText = document.getElementById('oledPctText');
+    const einkPctText = document.getElementById('einkPctText');
+    const neoPctText = document.getElementById('neoPctText');
+    const swissPctText = document.getElementById('swissPctText');
+
+    let currentMode = 'normal';
+    let targetPct = 10;
+    let displayedPct = 10;
+    let isAnimating = false;
+    let deterministicMode = false;
+    let isErrorState = false;
+    let lastProgressTime = Date.now();
+    let animFrameId = null;
+
+    function renderDisplay(pct) {
+      const clamped = Math.min(100, Math.max(0, pct));
+      if (mainFill) mainFill.style.width = clamped + '%';
+
+      // Em modo determinístico (extração real com bytes/arquivos), permite ir até 99% sem teto artificial de 92%
+      const maxAllowed = targetPct >= 100 ? 100 : (deterministicMode ? 99 : 92);
+      const rounded = Math.min(maxAllowed, Math.max(0, Math.round(clamped)));
+
+      if (darkPctText) darkPctText.textContent = rounded + '%';
+      if (warmPctText) warmPctText.textContent = String(rounded);
+      if (oledPctText) oledPctText.textContent = String(rounded);
+      if (einkPctText) einkPctText.textContent = String(rounded);
+      if (neoPctText) neoPctText.textContent = rounded + '%';
+      if (swissPctText) swissPctText.textContent = String(rounded);
+    }
+
+    function startAnimLoop() {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      function tick() {
+        const now = Date.now();
+        // Micro-drift só roda no boot normal (sem progresso granular de bytes); nunca em extração determinística ou erro
+        if (!deterministicMode && !isErrorState && targetPct < 90 && now - lastProgressTime > 350) {
+          targetPct = Math.min(targetPct + 0.025, 90);
+        }
+
+        const diff = targetPct - displayedPct;
+        if (Math.abs(diff) > 0.03) {
+          // LERP cinemático: velocidade elástica macia (0.14) e finalização instantânea no 100% (0.45)
+          const speed = targetPct >= 100 ? 0.45 : 0.14;
+          displayedPct += diff * speed;
+          renderDisplay(displayedPct);
+          animFrameId = requestAnimationFrame(tick);
+        } else {
+          displayedPct = targetPct;
+          renderDisplay(displayedPct);
+          if (!isErrorState && displayedPct < 100) {
+            animFrameId = requestAnimationFrame(tick);
+          } else {
+            isAnimating = false;
+          }
+        }
+      }
+
+      animFrameId = requestAnimationFrame(tick);
+    }
+
+    function switchToProgressView(resetPct = null) {
+      isErrorState = false;
+      optionsView.style.display = 'none';
+      progressView.style.display = 'flex';
+      if (window.electronAPI && window.electronAPI.setBootstrapErrorMode) {
+        window.electronAPI.setBootstrapErrorMode(false);
+      }
+      if (typeof resetPct === 'number') {
+        targetPct = resetPct;
+        displayedPct = resetPct;
+        renderDisplay(resetPct);
+      }
+      lastProgressTime = Date.now();
+      startAnimLoop();
+    }
+
+    renderDisplay(10);
+    startAnimLoop();
+
+    document.getElementById('winMinimize').addEventListener('click', () => {
+      if (window.electronAPI && window.electronAPI.minimize) {
+        window.electronAPI.minimize();
+      }
+    });
+
+    document.getElementById('winClose').addEventListener('click', () => {
+      if (window.electronAPI && window.electronAPI.close) {
+        window.electronAPI.close();
+      }
+    });
+
+    document.getElementById('btnSelectArchive').addEventListener('click', async () => {
+      const btn = document.getElementById('btnSelectArchive');
+      const origText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Abrindo seletor...';
+      try {
+        if (window.electronAPI && window.electronAPI.selectEngineArchive) {
+          const res = await window.electronAPI.selectEngineArchive();
+          if (res && res.canceled) {
+            return;
+          }
+          if (res && !res.success) {
+            showError(res.error || 'Não foi possível usar o pacote selecionado.');
+          }
+        }
+      } catch (e) {
+        showError(e.message || 'Erro ao selecionar pacote do motor.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = origText;
+      }
+    });
+
+    document.getElementById('btnAutoSetup').addEventListener('click', async () => {
+      deterministicMode = true;
+      currentMode = 'first';
+      mainTitle.textContent = 'Configurando Estúdio';
+      if (telemetryDetail) telemetryDetail.textContent = '';
+      switchToProgressView(6);
+
+      if (window.electronAPI && window.electronAPI.startAutoSetup) {
+        try {
+          const res = await window.electronAPI.startAutoSetup();
+          if (!res.success) {
+            showError(res.error || 'Falha ao configurar ambiente.');
+          }
+        } catch (e) {
+          showError(e.message || 'Erro inesperado.');
+        }
+      }
+    });
+
+    document.getElementById('btnCheckAgain').addEventListener('click', async () => {
+      const btn = document.getElementById('btnCheckAgain');
+      const origText = btn.innerHTML;
+      btn.textContent = 'Verificando...';
+      try {
+        if (window.electronAPI && window.electronAPI.checkPython) {
+          const res = await window.electronAPI.checkPython();
+          if (!res || !res.found) {
+            showError(res?.error || 'Ambiente Python compatível ainda não foi detectado.');
+          }
+        }
+      } catch (e) {
+        showError(e.message || 'Falha ao verificar ambiente Python.');
+      } finally {
+        btn.innerHTML = origText;
+      }
+    });
+
+    document.getElementById('btnOpenLogs').addEventListener('click', () => {
+      if (window.electronAPI && window.electronAPI.openBootstrapLog) {
+        window.electronAPI.openBootstrapLog();
+      }
+    });
+
+    if (window.electronAPI && window.electronAPI.onBootstrapProgress) {
+      window.electronAPI.onBootstrapProgress((payload) => {
+        if (!payload || typeof payload !== 'object') return;
+        const { percent, message, detail, mode, deterministic } = payload;
+
+        if (isErrorState) {
+          switchToProgressView(typeof percent === 'number' ? percent : 6);
+        }
+
+        const wasNormal = currentMode !== 'first';
+        if (mode && mode !== currentMode) {
+          currentMode = mode;
+          mainTitle.textContent = mode === 'first' ? 'Configurando Estúdio' : 'Iniciando Estúdio';
+        }
+        if (mode === 'first' || deterministic === true) {
+          deterministicMode = true;
+          if (mode === 'first' && wasNormal && typeof percent === 'number' && percent < displayedPct) {
+            targetPct = percent;
+            displayedPct = percent;
+            renderDisplay(percent);
+          }
+        }
+        if (typeof percent === 'number') {
+          const clamped = Math.min(100, Math.max(0, percent));
+          targetPct = deterministicMode ? Math.max(targetPct, clamped) : Math.max(targetPct, Math.round(clamped));
+          lastProgressTime = Date.now();
+          startAnimLoop();
+        }
+        if (message) {
+          statusMessage.textContent = message;
+        }
+        if (telemetryDetail) {
+          telemetryDetail.textContent = detail ? String(detail) : '';
+        }
+      });
+    }
+
+    if (window.electronAPI && window.electronAPI.onSplashMode) {
+      window.electronAPI.onSplashMode((payload) => {
+        window.__setupModeActive = true;
+        switchToProgressView(Math.max(targetPct, 15));
+        statusMessage.textContent = 'Conectando ao servidor local...';
+        if (payload) {
+          const brandSrc = typeof payload === 'object' && payload.logoBase64 ? payload.logoBase64 : (typeof payload === 'string' ? payload : null);
+          const wmSrc = typeof payload === 'object' && payload.watermarkBase64 ? payload.watermarkBase64 : (typeof payload === 'string' ? payload : null);
+          const img = document.getElementById('brandLogoImg');
+          const wm = document.getElementById('watermarkLogoImg');
+          if (img && brandSrc) img.src = brandSrc;
+          if (wm && wmSrc) wm.src = wmSrc;
+        }
+      });
+    }
+
+    if (window.electronAPI && window.electronAPI.onBootstrapDone) {
+      window.electronAPI.onBootstrapDone(() => {
+        document.body.classList.add('fading');
+      });
+    }
+
+    if (window.electronAPI && window.electronAPI.onBootstrapError) {
+      window.electronAPI.onBootstrapError((data) => {
+        const msg = typeof data === 'object' && data?.message ? data.message : String(data || '');
+        showError(msg);
+      });
+    }
+
+    function showError(msg) {
+      isErrorState = true;
+      deterministicMode = true;
+      errorBox.textContent = msg;
+      progressView.style.display = 'none';
+      optionsView.style.display = 'flex';
+      mainTitle.textContent = 'Atenção na Inicialização';
+      statusMessage.textContent = 'Não foi possível iniciar o motor local automaticamente.';
+      if (telemetryDetail) telemetryDetail.textContent = '';
+      if (window.electronAPI && window.electronAPI.setBootstrapErrorMode) {
+        window.electronAPI.setBootstrapErrorMode(true);
+      }
+    }
+    window.showError = showError;
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+torch==2.11.0+cu128
+torchvision==0.26.0+cu128
+transformers==4.40.0
+einops==0.8.2
+timm==1.0.29
+opencv-python==5.0.0.93
+numpy==2.4.6
+huggingface_hub==0.36.2
+ultralytics==8.4.135
+accelerate==1.14.0
+hf-transfer==0.1.9
+hf_xet==1.6.0

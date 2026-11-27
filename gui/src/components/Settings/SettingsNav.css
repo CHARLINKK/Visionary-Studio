@@ -1,0 +1,209 @@
+/* =========================================================================
+   SETTINGS NAV & BASE LAYOUT
+   ========================================================================= */
+
+.settings-container {
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Minimal Custom Scrollbar for Settings */
+.settings-layout::-webkit-scrollbar {
+  width: 8px;
+}
+.settings-layout::-webkit-scrollbar-track {
+  background: transparent;
+}
+.settings-layout::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.settings-layout::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.settings-top-nav-bar {
+  width: 100%;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.settings-top-nav {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 0 0 14px 0;
+  max-width: 1140px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.settings-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.settings-nav-item:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.settings-nav-item.active {
+  color: var(--brand-primary);
+  background: rgba(139, 92, 246, 0.1);
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.2);
+}
+
+.settings-nav-item .nav-icon {
+  opacity: 0.7;
+}
+.settings-nav-item.active .nav-icon {
+  opacity: 1;
+}
+
+.settings-content-area {
+  flex: 1;
+  width: 100%;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.settings-page-header {
+  flex-shrink: 0;
+  width: 100%;
+  padding: 20px 0 12px 0;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.settings-page-header-inner {
+  max-width: 1140px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.settings-page-header h1 {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 3px 0;
+  letter-spacing: var(--tracking-tight-4);
+}
+
+.settings-page-header p {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Base Sections */
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 100px;
+  contain: layout style;
+  padding: 0 0 14px 0;
+  width: 100%;
+  box-sizing: border-box;
+  animation: fade-in 0.3s ease;
+}
+
+.settings-select {
+  width: 260px;
+  cursor: pointer;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.settings-select:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+}
+
+.settings-select option {
+  background-color: var(--bg-panel);
+  color: var(--text-main);
+}
+
+/* Footer */
+.settings-footer {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* Dev Noir Status Notice in Settings */
+.dev-noir-notice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.dev-noir-badge {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 800;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}
+
+/* Theme overrides for page header */
+:root[data-theme='light'] .settings-page-header p,
+:root[data-theme='warm-paper'] .settings-page-header p {
+  color: var(--text-secondary);
+}

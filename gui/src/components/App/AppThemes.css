@@ -1,0 +1,1280 @@
+/* =========================================================================
+   VISIONARY STUDIO - APP SHELL THEMES & DESIGN SYSTEM OVERRIDES
+   Themes: dev-matrix (monochrome noir), light, warm-paper, oled, e-ink, neo-tokyo
+   ========================================================================= */
+
+/* =========================================================================
+   DEV MODE // MONOCHROME NOIR THEME (BLACK & WHITE)
+   ========================================================================= */
+
+/* ── Dev Monochrome Theme Variables ── */
+[data-theme="dev-matrix"] {
+  --bg-base: #000000;
+  --bg-dark: #050505;
+  --bg-primary: #000000;
+  --bg-secondary: #0c0c0e;
+  --bg-sidebar: #08080a;
+  --bg-panel: #0d0d10;
+  --bg-surface: #141417;
+  --bg-surface-elevated: #1c1c21;
+  --bg-card: #0e0e11;
+  --bg-hover: rgba(255, 255, 255, 0.08);
+  --bg-active: rgba(255, 255, 255, 0.16);
+
+  --brand-primary: #ffffff;
+  --brand-hover: #e4e4e7;
+  --brand-glow: rgba(255, 255, 255, 0.35);
+  --brand-purple: #e4e4e7;
+  --brand-pink: #d4d4d8;
+  --brand-green: #d4d4d8;
+  --brand-red: #ef4444;
+
+  --text-main: #ffffff;
+  --text-primary: #ffffff;
+  --text-secondary: #d4d4d8;
+  --text-muted: #a1a1aa;
+  --text-tertiary: #71717a;
+
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-color: rgba(255, 255, 255, 0.15);
+  --border-focus: #ffffff;
+  --border-highlight: rgba(255, 255, 255, 0.35);
+  --border-hover: rgba(255, 255, 255, 0.25);
+}
+
+[data-theme="dev-matrix"] .custom-titlebar {
+  background: #08080a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dev-matrix"] .titlebar-badge {
+  background: #ffffff !important;
+  border: 1px solid #ffffff;
+  color: #000000 !important;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  font-weight: 800;
+}
+
+[data-theme="dev-matrix"] .app-sidebar {
+  background-color: #060608;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dev-matrix"] .top-tabs {
+  background: #08080a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dev-matrix"] .tab-indicator-pill {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+[data-theme="dev-matrix"] .tab-btn.active {
+  background: transparent;
+  color: #ffffff;
+  box-shadow: none;
+  border: none;
+}
+
+/* ── Primary Action Buttons ── */
+[data-theme="dev-matrix"] .btn-primary,
+[data-theme="dev-matrix"] button.primary,
+[data-theme="dev-matrix"] .theme-btn.active,
+[data-theme="dev-matrix"] .base-folder-btn,
+[data-theme="dev-matrix"] .btn-folder-browse,
+[data-theme="dev-matrix"] .btn-run-step,
+[data-theme="dev-matrix"] .btn-engine-action.primary,
+[data-theme="dev-matrix"] .btn-utility-primary,
+[data-theme="dev-matrix"] .btn-lib-cta.primary,
+[data-theme="dev-matrix"] .view-mode-btn.active,
+[data-theme="dev-matrix"] .native-filter-btn.active,
+[data-theme="dev-matrix"] .btn-toggle-log.active,
+[data-theme="dev-matrix"] .xray-tab-btn.active,
+[data-theme="dev-matrix"] .version-badge {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #000000 !important;
+  border: 1px solid #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.25) !important;
+}
+
+[data-theme="dev-matrix"] .btn-primary:hover:not(:disabled),
+[data-theme="dev-matrix"] button.primary:hover:not(:disabled),
+[data-theme="dev-matrix"] .theme-btn.active:hover,
+[data-theme="dev-matrix"] .base-folder-btn:hover:not(:disabled),
+[data-theme="dev-matrix"] .btn-folder-browse:hover:not(:disabled),
+[data-theme="dev-matrix"] .btn-run-step:hover:not(:disabled),
+[data-theme="dev-matrix"] .btn-engine-action.primary:hover:not(:disabled),
+[data-theme="dev-matrix"] .btn-utility-primary:hover:not(:disabled),
+[data-theme="dev-matrix"] .btn-lib-cta.primary:hover:not(:disabled),
+[data-theme="dev-matrix"] .view-mode-btn.active:hover,
+[data-theme="dev-matrix"] .native-filter-btn.active:hover,
+[data-theme="dev-matrix"] .btn-toggle-log.active:hover,
+[data-theme="dev-matrix"] .xray-tab-btn.active:hover {
+  background-color: #e4e4e7 !important;
+  color: #000000 !important;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.45) !important;
+}
+
+[data-theme="dev-matrix"] .btn-primary:active:not(:disabled),
+[data-theme="dev-matrix"] button.primary:active:not(:disabled),
+[data-theme="dev-matrix"] .theme-btn.active:active,
+[data-theme="dev-matrix"] .base-folder-btn:active:not(:disabled),
+[data-theme="dev-matrix"] .btn-run-step:active:not(:disabled) {
+  background-color: #d4d4d8 !important;
+  color: #000000 !important;
+}
+
+[data-theme="dev-matrix"] .btn-primary:disabled,
+[data-theme="dev-matrix"] button.primary:disabled,
+[data-theme="dev-matrix"] .base-folder-btn:disabled,
+[data-theme="dev-matrix"] .btn-run-step:disabled,
+[data-theme="dev-matrix"] .btn-engine-action.primary:disabled,
+[data-theme="dev-matrix"] .btn-utility-primary:disabled {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+}
+
+/* ── Secondary, Ghost & Auxiliary Action Buttons ── */
+[data-theme="dev-matrix"] .btn-secondary,
+[data-theme="dev-matrix"] button.secondary,
+[data-theme="dev-matrix"] .btn-lib-cta.secondary,
+[data-theme="dev-matrix"] .btn-engine-action.secondary,
+[data-theme="dev-matrix"] .btn-utility-action,
+[data-theme="dev-matrix"] .btn-model-action.test {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #e4e4e7 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  font-weight: 500;
+}
+
+[data-theme="dev-matrix"] .btn-secondary:hover:not(:disabled),
+[data-theme="dev-matrix"] button.secondary:hover:not(:disabled),
+[data-theme="dev-matrix"] .btn-lib-cta.secondary:hover,
+[data-theme="dev-matrix"] .btn-engine-action.secondary:hover:not(:disabled),
+[data-theme="dev-matrix"] .btn-utility-action:hover:not(:disabled),
+[data-theme="dev-matrix"] .btn-model-action.test:hover {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+}
+
+/* ── Settings Appearance Toggles & Controls ── */
+[data-theme="dev-matrix"] .theme-toggle-group {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="dev-matrix"] .theme-btn {
+  color: #a1a1aa;
+}
+
+[data-theme="dev-matrix"] .theme-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dev-matrix"] .classic-checkbox input {
+  accent-color: #ffffff;
+}
+
+/* ── Studio Sleek Process Button & Step Cards ── */
+[data-theme="dev-matrix"] .btn-primary-sleek {
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  border: 1px solid #ffffff !important;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.35) !important;
+}
+
+[data-theme="dev-matrix"] .btn-primary-sleek:hover:not(:disabled) {
+  background: #e4e4e7 !important;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.55) !important;
+}
+
+[data-theme="dev-matrix"] .custom-toggle.on {
+  background: #ffffff !important;
+}
+
+[data-theme="dev-matrix"] .custom-toggle.on .toggle-knob {
+  background: #000000 !important;
+}
+
+[data-theme="dev-matrix"] .refined-checkbox input:checked + .checkbox-box {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+[data-theme="dev-matrix"] .refined-checkbox input:checked + .checkbox-box svg {
+  color: #000000 !important;
+}
+
+[data-theme="dev-matrix"] .pipeline-step-card.active .step-number {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+  font-weight: 800;
+}
+
+[data-theme="dev-matrix"] .batch-page-item.active {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+[data-theme="dev-matrix"] .batch-header button {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dev-matrix"] .batch-header button:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ── Modules Center Controls ── */
+[data-theme="dev-matrix"] .btn-model-action.use {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dev-matrix"] .btn-model-action.use:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+}
+
+[data-theme="dev-matrix"] .preset-pill.active {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme="dev-matrix"] .btn-sync-hardware {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+[data-theme="dev-matrix"] .btn-sync-hardware:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+/* ── Queue Floating Activity Dock & Tabs ── */
+[data-theme="dev-matrix"] .queue-dock-pill {
+  background: rgba(12, 12, 15, 0.95) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+[data-theme="dev-matrix"] .queue-dock-pill:hover {
+  border-color: #ffffff !important;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 255, 255, 0.3) !important;
+}
+
+[data-theme="dev-matrix"] .step-item-sober.active .step-circle-sober {
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #000000 !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ── Modals, Guides, Badges & Explorer ── */
+[data-theme="dev-matrix"] .modal-tab.active {
+  color: #ffffff !important;
+  border-bottom-color: #ffffff !important;
+  font-weight: 700;
+}
+
+[data-theme="dev-matrix"] .modal-content h3 {
+  color: #ffffff !important;
+}
+
+[data-theme="dev-matrix"] .model-name-code {
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dev-matrix"] .explorer-item.active {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff !important;
+}
+
+[data-theme="dev-matrix"] .explorer-item.active .item-name {
+  color: #ffffff !important;
+}
+
+[data-theme="dev-matrix"] .explorer-item.active .explorer-page-pill {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dev-matrix"] .about-stack {
+  color: #ffffff !important;
+}
+
+/* ── UI Density Modes ── */
+[data-density="compact"] .explorer-list {
+  padding: 4px 6px;
+  gap: 1px;
+}
+[data-density="compact"] .explorer-item {
+  padding: 4px 6px;
+  font-size: 11.5px;
+}
+[data-density="compact"] .top-tabs {
+  height: 40px;
+}
+[data-density="compact"] .tab-btn {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+[data-density="compact"] .settings-container {
+  padding: 20px 28px;
+}
+[data-density="compact"] .settings-card {
+  padding: 14px 18px;
+  gap: 14px;
+}
+[data-density="compact"] .pipeline-step-card {
+  margin-bottom: 6px;
+}
+[data-density="compact"] .step-header {
+  padding: 10px 14px !important;
+}
+
+/* ── Reduce Motion Mode ── */
+[data-reduce-motion="true"] *,
+[data-reduce-motion="true"] *::before,
+[data-reduce-motion="true"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+/* ══════════════════════════════════════
+   LIGHT THEME OVERRIDES (App Shell & Navigation)
+   ══════════════════════════════════════ */
+
+/* Cores 100% via tokens (--bg-*, --text-*, --brand-*): respeitam o off-white do tema
+   e o acento ajustado por contraste (useAppTheme), sem branco puro nem slate fixo. */
+[data-theme=light] .custom-titlebar {
+  background: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme=light] .app-sidebar {
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+}
+
+[data-theme=light] .top-tabs {
+  background: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme=light] .sidebar-header,
+[data-theme=light] .explorer-toolbar {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+[data-theme=light] .sidebar-header h3 {
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+[data-theme=light] .tab-btn {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+[data-theme=light] .tab-btn:hover {
+  color: var(--text-main);
+  background: var(--bg-hover);
+}
+
+[data-theme=light] .tab-indicator-pill {
+  background: var(--bg-panel);
+  box-shadow: 0 1px 3px rgba(30, 36, 48, 0.10), 0 1px 2px rgba(30, 36, 48, 0.05);
+  border: 1px solid var(--border-subtle);
+}
+
+[data-theme=light] .tab-btn.active {
+  color: var(--brand-primary);
+  background: transparent;
+  box-shadow: none;
+  font-weight: 700;
+}
+
+[data-theme=light] .btn-secondary {
+  color: var(--text-main);
+  border: 1px solid var(--border-highlight);
+  background: var(--bg-card);
+  font-weight: 600;
+}
+
+[data-theme=light] .btn-secondary:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-hover);
+  color: var(--text-main);
+}
+
+[data-theme=light] .btn-explorer-up {
+  color: var(--text-main);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+  box-shadow: var(--card-shadow);
+}
+
+[data-theme=light] .btn-explorer-refresh {
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme=light] .btn-explorer-refresh:hover {
+  color: var(--text-main);
+  background: var(--bg-surface-elevated);
+}
+
+[data-theme=light] .explorer-page-pill {
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-highlight);
+  font-weight: 600;
+}
+
+[data-theme=light] .explorer-search-input {
+  color: var(--text-main);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  box-shadow: none;
+}
+
+[data-theme=light] .explorer-search-input::placeholder {
+  color: var(--text-tertiary);
+  opacity: 1;
+}
+
+[data-theme=light] .explorer-item {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+[data-theme=light] .explorer-item:hover {
+  background-color: var(--bg-hover);
+}
+
+[data-theme=light] .explorer-item.active {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-main);
+  border-left: 3px solid var(--brand-primary);
+  font-weight: 600;
+}
+
+[data-theme=light] .explorer-item.active .item-name {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+[data-theme=light] .explorer-item.active .explorer-page-pill {
+  background: var(--bg-card);
+  border-color: var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+[data-theme=light] .file-path-badge {
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  font-weight: 600;
+  box-shadow: none;
+}
+
+[data-theme=light] .file-path-badge .path-label {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+[data-theme=light] .view-mode-btn:not(.active) {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+[data-theme=light] .pending-tag {
+  color: var(--warning);
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════════
+   WARM-PAPER THEME OVERRIDES (App Shell & Navigation)
+   ══════════════════════════════════════ */
+
+[data-theme=warm-paper] .custom-titlebar {
+  background: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme=warm-paper] .app-sidebar {
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+}
+
+[data-theme=warm-paper] .top-tabs {
+  background: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme=warm-paper] .sidebar-header,
+[data-theme=warm-paper] .explorer-toolbar {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+[data-theme=warm-paper] .sidebar-header h3 {
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+[data-theme=warm-paper] .tab-btn {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+[data-theme=warm-paper] .tab-btn:hover {
+  color: var(--text-main);
+  background: var(--bg-hover);
+}
+
+[data-theme=warm-paper] .tab-indicator-pill {
+  background: var(--bg-card);
+  box-shadow: 0 1px 3px rgba(60, 40, 10, 0.10), 0 1px 2px rgba(60, 40, 10, 0.05);
+  border: 1px solid var(--border-subtle);
+}
+
+[data-theme=warm-paper] .tab-btn.active {
+  color: var(--brand-primary);
+  background: transparent;
+  box-shadow: none;
+  font-weight: 700;
+}
+
+[data-theme=warm-paper] .btn-secondary {
+  color: var(--text-main);
+  border: 1px solid var(--border-highlight);
+  background: var(--bg-card);
+  font-weight: 600;
+}
+
+[data-theme=warm-paper] .btn-secondary:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-hover);
+  color: var(--text-main);
+}
+
+[data-theme=warm-paper] .btn-explorer-up {
+  color: var(--text-main);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+  box-shadow: var(--card-shadow);
+}
+
+[data-theme=warm-paper] .btn-explorer-refresh {
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+}
+
+[data-theme=warm-paper] .btn-explorer-refresh:hover {
+  color: var(--text-main);
+  background: var(--bg-surface-elevated);
+}
+
+[data-theme=warm-paper] .explorer-page-pill {
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-highlight);
+  font-weight: 600;
+}
+
+[data-theme=warm-paper] .explorer-search-input {
+  color: var(--text-main);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  font-weight: 500;
+  box-shadow: none;
+}
+
+[data-theme=warm-paper] .explorer-search-input::placeholder {
+  color: var(--text-tertiary);
+  opacity: 1;
+}
+
+[data-theme=warm-paper] .explorer-item {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+[data-theme=warm-paper] .explorer-item:hover {
+  background-color: var(--bg-hover);
+}
+
+[data-theme=warm-paper] .explorer-item.active {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-main);
+  border-left: 3px solid var(--brand-primary);
+  font-weight: 600;
+}
+
+[data-theme=warm-paper] .explorer-item.active .item-name {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+[data-theme=warm-paper] .explorer-item.active .explorer-page-pill {
+  background: var(--bg-card);
+  border-color: var(--border-subtle);
+  color: var(--text-secondary);
+}
+
+[data-theme=warm-paper] .file-path-badge {
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  font-weight: 600;
+  box-shadow: none;
+}
+
+[data-theme=warm-paper] .file-path-badge .path-label {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+[data-theme=warm-paper] .view-mode-btn:not(.active) {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+[data-theme=warm-paper] .pending-tag {
+  color: var(--warning);
+  font-weight: 600;
+}
+
+/* ── Structural Personality: Warm-Paper (Mangaká Atelier — Papel & Nanquim) ── */
+[data-theme=warm-paper] .ui-settings-card,
+[data-theme=warm-paper] .workflow-settings-card,
+[data-theme=warm-paper] .audio-settings-card,
+[data-theme=warm-paper] .shortcuts-settings-card,
+[data-theme=warm-paper] .about-studio-card,
+[data-theme=warm-paper] .model-card,
+[data-theme=warm-paper] .library-card,
+[data-theme=warm-paper] .balloon-card,
+[data-theme=warm-paper] .batch-page-item,
+[data-theme=warm-paper] .visionary-dialog-modal {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-highlight);
+  box-shadow: var(--card-shadow);
+}
+
+[data-theme=warm-paper] .tab-indicator-pill {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-highlight);
+  box-shadow: var(--card-shadow);
+}
+
+[data-theme=light] .batch-page-item.active,
+[data-theme=warm-paper] .batch-page-item.active {
+  background: var(--bg-surface-elevated);
+  color: var(--text-main);
+  border-left: 3px solid var(--brand-primary);
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+}
+
+[data-theme=warm-paper] .btn-primary,
+[data-theme=warm-paper] .btn-primary-sleek,
+[data-theme=warm-paper] .base-folder-btn {
+  box-shadow: var(--btn-primary-shadow);
+  border: 1px solid var(--brand-hover);
+}
+
+/* Desabilitado em papel: opacity 0.3 sobre bege some (< 2:1). Mantém legível e ainda distinguível. */
+[data-theme=warm-paper] button:disabled {
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+/* Botões fantasma (rótulos Traduzir/OCR/Tudo) já são discretos: desabilitado só precisa de leve queda */
+[data-theme=warm-paper] .btn-clear-ghost:disabled {
+  opacity: 0.8;
+}
+
+/* Botões que já definem cores de desabilitado próprias não podem ter opacidade em dobro */
+[data-theme=warm-paper] .btn-primary-batch:disabled {
+  opacity: 1;
+  background: var(--bg-surface-elevated);
+  color: var(--text-tertiary);
+  border: 1px dashed var(--border-highlight);
+}
+
+/* ══════════════════════════════════════
+   OLED THEME OVERRIDES (Cyber CAD — 0px & Blueprint)
+   ══════════════════════════════════════ */
+
+[data-theme=oled] .custom-titlebar {
+  background: var(--bg-sidebar);
+  border-bottom: 1px solid var(--border-subtle);
+  backdrop-filter: none;
+}
+
+[data-theme=oled] .top-tabs {
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border-subtle);
+  backdrop-filter: none;
+}
+
+[data-theme=oled] .app-sidebar {
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border-subtle);
+  backdrop-filter: none;
+}
+
+[data-theme=oled] .editor-sidebar {
+  background: var(--bg-panel);
+  border-left: 1px solid var(--border-subtle);
+  backdrop-filter: none;
+}
+
+[data-theme=oled] .editor-topbar {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  backdrop-filter: none;
+}
+
+/* ── Transição Suave Universal de Geometria (Morfismo entre Temas Quadrados e Redondos) ── */
+button,
+input,
+select,
+textarea,
+.custom-titlebar,
+.titlebar-badge,
+.titlebar-active-file,
+.titlebar-bg-download-pill,
+.top-tabs,
+.tab-btn,
+.tab-indicator-pill,
+.tabs-pill-nav,
+.app-sidebar,
+.explorer-sidebar,
+.btn-explorer-up,
+.btn-explorer-refresh,
+.explorer-search-box,
+.explorer-search-input,
+.explorer-item,
+.explorer-page-pill,
+.explorer-status-dot,
+.sidebar-collapse-btn,
+.studio-workspace,
+.editor-topbar,
+.mode-btn,
+.canvas-control-btn,
+.zoom-control-btn,
+.all-pages-pill,
+.page-pill-btn,
+.page-pill,
+.autosave-status-badge,
+.seamless-inspector,
+.inspector-card,
+.layout-inspector-root,
+.layout-tools-panel,
+.btn-layout-dock,
+.dock-shortcut,
+.layout-contour-toggle-group,
+.btn-contour-toggle,
+.layout-tabs-bar,
+.btn-layout-tab,
+.layout-nav-count-badge,
+.btn-flow,
+.bubble-nav-card,
+.bubble-nav-card-v1,
+.card-v1-thumb,
+.card-v1-loc,
+.card-v1-order-pill,
+.card-v1-dim,
+.card-v1-drag-handle,
+.tool-btn,
+.tool-button,
+.contour-toggle-group,
+.contour-toggle-btn,
+.flow-btn,
+.auto-order-btn,
+.bubble-card-item,
+.bubble-shape-btn,
+.bubble-type-pill,
+.bubble-detail-card,
+.batch-sidebar,
+.batch-page-item,
+.batch-pipeline-dock,
+.batch-stages-vertical,
+.batch-stage-row,
+.val-sfx-pill,
+.vs-micro-track,
+.vs-track-dot,
+.btn-step-run,
+.btn-run-step,
+.btn-clear-ghost,
+.btn-primary-batch,
+.library-header,
+.library-header-card,
+.chapter-pill,
+.balloon-card,
+.library-card,
+.library-balloon-row,
+.balloon-box,
+.balloon-preview-thumb,
+.balloon-meta-pill,
+.ocr-confidence-badge,
+.ui-settings-card,
+.workflow-settings-card,
+.audio-settings-card,
+.shortcuts-settings-card,
+.about-studio-card,
+.model-card,
+.theme-specimen-btn,
+.theme-viewport-mini,
+.modern-checkbox-box,
+.swatch,
+.custom-swatch,
+.density-toggle-group,
+.scale-toggle-group,
+.font-specimen-btn,
+.preview-dot-sample,
+.preview-toggle-sample,
+.preview-toggle-knob,
+.visionary-dialog-modal,
+.confirm-modal-content,
+.onboarding-card,
+.btn-primary,
+.btn-primary-sleek,
+.btn-secondary,
+.btn-ghost {
+  transition: border-radius 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.15s ease;
+}
+
+/* ── Geometria Industrial CAD Estrita (0px em todos os componentes) ── */
+[data-theme=oled] button,
+[data-theme=oled] input,
+[data-theme=oled] select,
+[data-theme=oled] textarea,
+[data-theme=oled] .custom-titlebar,
+[data-theme=oled] .titlebar-badge,
+[data-theme=oled] .titlebar-active-file,
+[data-theme=oled] .titlebar-bg-download-pill,
+[data-theme=oled] .top-tabs,
+[data-theme=oled] .tab-btn,
+[data-theme=oled] .tab-indicator-pill,
+[data-theme=oled] .tabs-pill-nav,
+[data-theme=oled] .app-sidebar,
+[data-theme=oled] .explorer-sidebar,
+[data-theme=oled] .btn-explorer-up,
+[data-theme=oled] .btn-explorer-refresh,
+[data-theme=oled] .explorer-search-box,
+[data-theme=oled] .explorer-search-input,
+[data-theme=oled] .explorer-item,
+[data-theme=oled] .explorer-page-pill,
+[data-theme=oled] .explorer-status-dot,
+[data-theme=oled] .sidebar-collapse-btn,
+[data-theme=oled] .studio-workspace,
+[data-theme=oled] .editor-topbar,
+[data-theme=oled] .mode-btn,
+[data-theme=oled] .canvas-control-btn,
+[data-theme=oled] .zoom-control-btn,
+[data-theme=oled] .all-pages-pill,
+[data-theme=oled] .page-pill-btn,
+[data-theme=oled] .page-pill,
+[data-theme=oled] .autosave-status-badge,
+[data-theme=oled] .seamless-inspector,
+[data-theme=oled] .inspector-card,
+[data-theme=oled] .layout-inspector-root,
+[data-theme=oled] .layout-tools-panel,
+[data-theme=oled] .btn-layout-dock,
+[data-theme=oled] .dock-shortcut,
+[data-theme=oled] .layout-contour-toggle-group,
+[data-theme=oled] .btn-contour-toggle,
+[data-theme=oled] .layout-tabs-bar,
+[data-theme=oled] .btn-layout-tab,
+[data-theme=oled] .layout-nav-count-badge,
+[data-theme=oled] .btn-flow,
+[data-theme=oled] .bubble-nav-card,
+[data-theme=oled] .bubble-nav-card-v1,
+[data-theme=oled] .card-v1-thumb,
+[data-theme=oled] .card-v1-loc,
+[data-theme=oled] .card-v1-order-pill,
+[data-theme=oled] .card-v1-dim,
+[data-theme=oled] .card-v1-drag-handle,
+[data-theme=oled] .tool-btn,
+[data-theme=oled] .tool-button,
+[data-theme=oled] .contour-toggle-group,
+[data-theme=oled] .contour-toggle-btn,
+[data-theme=oled] .flow-btn,
+[data-theme=oled] .auto-order-btn,
+[data-theme=oled] .bubble-card-item,
+[data-theme=oled] .bubble-shape-btn,
+[data-theme=oled] .bubble-type-pill,
+[data-theme=oled] .bubble-detail-card,
+[data-theme=oled] .batch-sidebar,
+[data-theme=oled] .batch-page-item,
+[data-theme=oled] .batch-pipeline-dock,
+[data-theme=oled] .batch-stages-vertical,
+[data-theme=oled] .batch-stage-row,
+[data-theme=oled] .val-sfx-pill,
+[data-theme=oled] .vs-micro-track,
+[data-theme=oled] .vs-track-dot,
+[data-theme=oled] .btn-step-run,
+[data-theme=oled] .btn-run-step,
+[data-theme=oled] .btn-clear-ghost,
+[data-theme=oled] .btn-primary-batch,
+[data-theme=oled] .library-header,
+[data-theme=oled] .library-header-card,
+[data-theme=oled] .chapter-pill,
+[data-theme=oled] .balloon-card,
+[data-theme=oled] .library-card,
+[data-theme=oled] .library-balloon-row,
+[data-theme=oled] .balloon-box,
+[data-theme=oled] .balloon-preview-thumb,
+[data-theme=oled] .balloon-meta-pill,
+[data-theme=oled] .ocr-confidence-badge,
+[data-theme=oled] .ui-settings-card,
+[data-theme=oled] .workflow-settings-card,
+[data-theme=oled] .audio-settings-card,
+[data-theme=oled] .shortcuts-settings-card,
+[data-theme=oled] .about-studio-card,
+[data-theme=oled] .model-card,
+[data-theme=oled] .theme-specimen-btn,
+[data-theme=oled] .theme-viewport-mini,
+[data-theme=oled] .modern-checkbox-box,
+[data-theme=oled] .swatch,
+[data-theme=oled] .custom-swatch,
+[data-theme=oled] .density-toggle-group,
+[data-theme=oled] .scale-toggle-group,
+[data-theme=oled] .font-specimen-btn,
+[data-theme=oled] .preview-dot-sample,
+[data-theme=oled] .preview-toggle-sample,
+[data-theme=oled] .preview-toggle-knob,
+[data-theme=oled] .visionary-dialog-modal,
+[data-theme=oled] .confirm-modal-content,
+[data-theme=oled] .onboarding-card,
+[data-theme=oled] .btn-primary,
+[data-theme=oled] .btn-primary-sleek,
+[data-theme=oled] .btn-secondary,
+[data-theme=oled] .btn-ghost {
+  border-radius: 0px !important;
+}
+
+/* ── Transição e Suavização de Bordas em Temas Geométricos (Efeito Anti-Aresta / Micro-Aura) ── */
+[data-theme=oled] .tab-indicator-pill {
+  border-radius: 0px !important;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-bottom: 2px solid var(--brand-primary);
+  box-shadow: 0 2px 8px -2px rgba(56, 189, 248, 0.35);
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+              width 0.24s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s ease,
+              border-color 0.2s ease;
+}
+
+[data-theme=oled] .tab-btn {
+  color: var(--text-muted);
+  transition: color 0.18s ease, background-color 0.18s ease;
+}
+
+[data-theme=oled] .tab-btn:hover {
+  color: var(--text-main);
+  background: var(--bg-hover);
+}
+
+[data-theme=oled] .tab-btn.active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+[data-theme=oled] .explorer-item {
+  border-left: 2px solid transparent;
+  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.15s ease;
+}
+
+[data-theme=oled] .explorer-item:hover {
+  background: var(--bg-hover);
+  border-left-color: var(--border-highlight);
+}
+
+[data-theme=oled] .explorer-item.active {
+  border-left: 2px solid var(--brand-primary);
+  background: rgba(56, 189, 248, 0.09);
+  box-shadow: inset 2px 0 8px -1px rgba(56, 189, 248, 0.22);
+  color: #ffffff;
+}
+
+[data-theme=oled] .explorer-page-pill {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+[data-theme=oled] .explorer-search-input {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme=oled] .explorer-search-input:focus {
+  background: var(--bg-surface-elevated);
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 1px var(--brand-primary), 0 0 8px rgba(56, 189, 248, 0.22);
+}
+
+[data-theme=oled] .btn-explorer-up,
+[data-theme=oled] .btn-explorer-refresh {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  transition: border-color 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s ease,
+              color 0.15s ease;
+}
+
+[data-theme=oled] .btn-explorer-up:hover:not(:disabled),
+[data-theme=oled] .btn-explorer-refresh:hover:not(:disabled) {
+  background: var(--bg-hover);
+  color: var(--text-main);
+  border-color: var(--border-focus);
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.14);
+}
+
+/* ── Studio Batch Sidebar (CAD Blueprint com Suavização) ── */
+[data-theme=oled] .batch-page-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-left: 2px solid transparent;
+  color: var(--text-secondary);
+  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.15s ease;
+}
+
+[data-theme=oled] .batch-page-item:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-highlight);
+  border-left-color: var(--border-highlight);
+  color: var(--text-main);
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.12);
+}
+
+[data-theme=oled] .batch-page-item.active {
+  border-color: var(--border-highlight);
+  border-left: 2px solid var(--brand-primary);
+  background: var(--bg-surface-elevated);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.18), inset 2px 0 8px -1px rgba(56, 189, 248, 0.25);
+  color: #ffffff;
+}
+
+[data-theme=oled] .batch-pipeline-dock {
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border-subtle);
+}
+
+[data-theme=oled] .batch-stages-vertical {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+}
+
+[data-theme=oled] .batch-stage-row {
+  border: 1px solid transparent;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+[data-theme=oled] .batch-stage-row:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-subtle);
+}
+
+[data-theme=oled] .val-sfx-pill {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme=oled] .val-sfx-pill:hover {
+  border-color: var(--border-highlight);
+  color: #ffffff;
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.15);
+}
+
+[data-theme=oled] .btn-step-run,
+[data-theme=oled] .btn-run-step {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme=oled] .btn-step-run:hover:not(:disabled),
+[data-theme=oled] .btn-run-step:hover:not(:disabled) {
+  background: var(--brand-primary);
+  color: var(--on-brand, #ffffff);
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.35);
+}
+
+/* Micro-LED Squares para CAD */
+[data-theme=oled] .vs-track-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 0px !important;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme=oled] .vs-track-dot.on-lay {
+  background: #38bdf8;
+  box-shadow: 0 0 4px rgba(56, 189, 248, 0.6);
+}
+
+[data-theme=oled] .vs-track-dot.on-ocr {
+  background: #f59e0b;
+  box-shadow: 0 0 4px rgba(245, 158, 11, 0.6);
+}
+
+[data-theme=oled] .vs-track-dot.on-trn {
+  background: #10b981;
+  box-shadow: 0 0 4px rgba(16, 185, 129, 0.6);
+}
+
+/* ── Settings, Modals & Cards (Cyber CAD) ── */
+[data-theme=oled] .ui-settings-card,
+[data-theme=oled] .workflow-settings-card,
+[data-theme=oled] .audio-settings-card,
+[data-theme=oled] .shortcuts-settings-card,
+[data-theme=oled] .about-studio-card,
+[data-theme=oled] .model-card,
+[data-theme=oled] .visionary-dialog-modal,
+[data-theme=oled] .confirm-modal-content {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 0 0 1px var(--border-subtle);
+}
+
+/* ══════════════════════════════════════
+   E-INK MATTE THEME OVERRIDES (100% Fosco)
+   ══════════════════════════════════════ */
+
+[data-theme=e-ink] *,
+[data-theme=e-ink] *::before,
+[data-theme=e-ink] *::after {
+  backdrop-filter: none !important;
+}
+
+[data-theme=e-ink] .custom-titlebar,
+[data-theme=e-ink] .top-tabs,
+[data-theme=e-ink] .app-sidebar {
+  background: var(--bg-sidebar);
+}
+
+[data-theme=e-ink] .ui-settings-card,
+[data-theme=e-ink] .workflow-settings-card,
+[data-theme=e-ink] .audio-settings-card,
+[data-theme=e-ink] .shortcuts-settings-card,
+[data-theme=e-ink] .about-studio-card,
+[data-theme=e-ink] .model-card,
+[data-theme=e-ink] .library-card,
+[data-theme=e-ink] .balloon-card,
+[data-theme=e-ink] .batch-page-item,
+[data-theme=e-ink] .visionary-dialog-modal {
+  background: var(--bg-panel);
+  box-shadow: none !important;
+  border-color: var(--border-color);
+}
+
+[data-theme=e-ink] .btn-primary,
+[data-theme=e-ink] .btn-primary-sleek,
+[data-theme=e-ink] .base-folder-btn {
+  background: var(--brand-primary) !important;
+  box-shadow: none !important;
+}
+
+[data-theme=e-ink] .tab-indicator-pill {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-highlight);
+  box-shadow: none !important;
+}
+
+/* ══════════════════════════════════════
+   NEO-TOKYO THEME OVERRIDES (HUD Sci-Fi)
+   ══════════════════════════════════════ */
+
+[data-theme=neo-tokyo] .custom-titlebar,
+[data-theme=neo-tokyo] .top-tabs {
+  background: linear-gradient(90deg, #050811 0%, #0b1324 100%);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+}
+
+[data-theme=neo-tokyo] .app-sidebar {
+  background: #080d18;
+  border-right: 1px solid rgba(56, 189, 248, 0.16);
+}
+
+[data-theme=neo-tokyo] .ui-settings-card,
+[data-theme=neo-tokyo] .workflow-settings-card,
+[data-theme=neo-tokyo] .audio-settings-card,
+[data-theme=neo-tokyo] .shortcuts-settings-card,
+[data-theme=neo-tokyo] .about-studio-card,
+[data-theme=neo-tokyo] .model-card,
+[data-theme=neo-tokyo] .library-card,
+[data-theme=neo-tokyo] .balloon-card,
+[data-theme=neo-tokyo] .visionary-dialog-modal {
+  background: linear-gradient(135deg, rgba(16, 26, 46, 0.94) 0%, rgba(10, 16, 30, 0.98) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: var(--card-shadow);
+}
+
+[data-theme=neo-tokyo] .tab-indicator-pill {
+  border-radius: 3px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-top: 2px solid var(--brand-primary);
+  box-shadow: 0 0 14px var(--brand-glow);
+}
+
+[data-theme=neo-tokyo] .explorer-item.active,
+[data-theme=neo-tokyo] .batch-page-item.active {
+  border-left: 3px solid var(--brand-primary);
+  background: linear-gradient(90deg, var(--brand-subtle) 0%, rgba(56, 189, 248, 0.03) 100%);
+  box-shadow: inset 4px 0 12px -4px var(--brand-glow);
+}

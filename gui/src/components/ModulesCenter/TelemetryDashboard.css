@@ -1,0 +1,227 @@
+/* =========================================================================
+   TELEMETRY DASHBOARD (HARDWARE STATS, VRAM, RAM & SYSTEM METRICS)
+   ========================================================================= */
+
+.telemetry-dashboard-hero {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 6px;
+}
+
+.telemetry-stat-card {
+  background: var(--bg-surface, rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.06));
+  border-radius: var(--radius-sm, 6px);
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.telemetry-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.telemetry-title-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.telemetry-header-icon {
+  color: #a78bfa;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.telemetry-device-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-main, #f4f4f6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.telemetry-meta-text {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-muted, #71717a);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.telemetry-card-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.telemetry-primary-value {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.telemetry-unit-label {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-muted, #71717a);
+}
+
+.telemetry-pct-badge {
+  font-size: 11px;
+  font-weight: 500;
+  color: #a78bfa;
+  font-family: var(--font-mono, monospace);
+  white-space: nowrap;
+}
+
+.telemetry-progress-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 1px;
+}
+
+.telemetry-progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(90deg, #7c3aed, #a78bfa);
+}
+
+/* ── Telemetry VRAM Card ── */
+.telemetry-card.vram-card {
+  background: #8b5cf60d;
+  border-color: #8b5cf640;
+  flex-direction: row;
+  flex: 100%;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 10px 14px;
+}
+
+.vram-card-info {
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 2px;
+  min-width: 90px;
+  display: flex;
+}
+
+.vram-card-label {
+  letter-spacing: .6px;
+  color: #a78bfa;
+  text-transform: uppercase;
+  align-items: center;
+  gap: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+}
+
+.vram-card-label.done {
+  color: #10b981;
+}
+
+.vram-card-numbers {
+  font-size: 11px;
+  font-weight: 600;
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  color: var(--text-main);
+}
+
+.vram-card-bar-wrap {
+  flex-direction: column;
+  flex: auto;
+  gap: 5px;
+  min-width: 0;
+  display: flex;
+}
+
+.vram-bar-pct {
+  color: var(--text-muted);
+  font-size: 9px;
+  font-family: var(--font-mono, monospace);
+  text-align: right;
+}
+
+/* ── Theme overrides for telemetry ── */
+[data-theme='light'] .telemetry-stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+[data-theme='warm-paper'] .telemetry-stat-card {
+  background: #fdfbf7;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(60, 40, 10, 0.04), 0 1px 2px rgba(60, 40, 10, 0.02);
+}
+
+[data-theme='light'] .telemetry-header-icon,
+[data-theme='warm-paper'] .telemetry-header-icon {
+  color: var(--brand-primary);
+  opacity: 1;
+}
+
+[data-theme='light'] .telemetry-device-title,
+[data-theme='warm-paper'] .telemetry-device-title {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+[data-theme='light'] .telemetry-meta-text,
+[data-theme='warm-paper'] .telemetry-meta-text {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+[data-theme='light'] .telemetry-primary-value,
+[data-theme='warm-paper'] .telemetry-primary-value {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+[data-theme='light'] .telemetry-unit-label,
+[data-theme='warm-paper'] .telemetry-unit-label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+[data-theme='light'] .telemetry-pct-badge,
+[data-theme='warm-paper'] .telemetry-pct-badge {
+  color: var(--brand-primary);
+  font-weight: 700;
+}
+
+[data-theme='light'] .telemetry-progress-track {
+  background: #e2e8f0;
+}
+
+[data-theme='warm-paper'] .telemetry-progress-track {
+  background: #e5dcce;
+}
+
+[data-theme='light'] .telemetry-progress-fill,
+[data-theme='warm-paper'] .telemetry-progress-fill {
+  background: linear-gradient(90deg, #7c3aed, #6366f1);
+}

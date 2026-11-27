@@ -1,0 +1,191 @@
+{
+  "version": 2,
+  "description": "Golden Set Ground Truth - Page 032 (Stacked Wavy Bubbles Separation & Newspaper Column Rejection)",
+  "image_file": "032.jpg",
+  "width": 1487,
+  "height": 2100,
+  "panels": [
+    {
+      "id": 1,
+      "order": 1,
+      "box": [104, 3, 1360, 467],
+      "description": "Tier 1 - Três quadros superiores alinhados com balões empilhados na direita"
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "box": [92, 498, 1446, 1279],
+      "description": "Tier 2 - Panorâmica da conversa no ginásio"
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "box": [529, 1202, 1466, 2097],
+      "description": "Tier 3 Direito - Treinador discutindo os recortes de jornal com balões empilhados"
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "box": [98, 1300, 524, 2099],
+      "description": "Tier 3 Esquerdo - Detalhe do jornal impresso e comentário final"
+    }
+  ],
+  "boxes": [
+    {
+      "id": 1,
+      "order": 1,
+      "panel_id": 1,
+      "x1": 1147,
+      "y1": 37,
+      "x2": 1358,
+      "y2": 242,
+      "label": "text_bubble",
+      "text": "HEY, DID YOU HEAR ABOUT THE NEXT CARD?",
+      "translated_text": "EI, VOCÊ OUVIU FALAR DO PRÓXIMO CARD?",
+      "is_sfx": false
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "panel_id": 1,
+      "x1": 1142,
+      "y1": 231,
+      "x2": 1366,
+      "y2": 473,
+      "label": "text_bubble",
+      "text": "THEY SAY THE CHAMPION IS ALREADY LOCKED IN!",
+      "translated_text": "DIZEM QUE O CAMPEÃO JÁ ESTÁ CONFIRMADO!",
+      "is_sfx": false
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "panel_id": 1,
+      "x1": 891,
+      "y1": 98,
+      "x2": 1122,
+      "y2": 470,
+      "label": "text_bubble",
+      "text": "NO WAY HE ACCEPTS A CHALLENGER THIS SOON.",
+      "translated_text": "SEM CHANCE DE ELE ACEITAR UM DESAFIANTE TÃO CEDO.",
+      "is_sfx": false
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "panel_id": 1,
+      "x1": 128,
+      "y1": 65,
+      "x2": 375,
+      "y2": 473,
+      "label": "text_bubble",
+      "text": "CHECK THE PAPER IF YOU DON'T BELIEVE ME!",
+      "translated_text": "OLHE O JORNAL SE VOCÊ NÃO ACREDITA EM MIM!",
+      "is_sfx": false
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "panel_id": 2,
+      "x1": 108,
+      "y1": 1128,
+      "x2": 209,
+      "y2": 1275,
+      "label": "text_bubble",
+      "text": "HOLD ON...",
+      "translated_text": "ESPERE AÍ...",
+      "is_sfx": false
+    },
+    {
+      "id": 6,
+      "order": 6,
+      "panel_id": 3,
+      "x1": 1247,
+      "y1": 1607,
+      "x2": 1366,
+      "y2": 1997,
+      "label": "text_bubble",
+      "text": "THIS HEADLINE FROM LAST NIGHT...",
+      "translated_text": "ESSA MANCHETE DE ONTEM À NOITE...",
+      "is_sfx": false
+    },
+    {
+      "id": 7,
+      "order": 7,
+      "panel_id": 3,
+      "x1": 1091,
+      "y1": 1705,
+      "x2": 1245,
+      "y2": 2059,
+      "label": "text_bubble",
+      "text": "IT MENTIONS THE EXACT SAME GYM.",
+      "translated_text": "MENCIONA EXATAMENTE O MESMO GINÁSIO.",
+      "is_sfx": false
+    },
+    {
+      "id": 8,
+      "order": 8,
+      "panel_id": 3,
+      "x1": 555,
+      "y1": 1247,
+      "x2": 673,
+      "y2": 1478,
+      "label": "text_bubble",
+      "text": "LISTEN UP!",
+      "translated_text": "PRESTEM ATENÇÃO!",
+      "is_sfx": false
+    },
+    {
+      "id": 9,
+      "order": 9,
+      "panel_id": 3,
+      "x1": 544,
+      "y1": 1483,
+      "x2": 690,
+      "y2": 1956,
+      "label": "text_bubble",
+      "text": "WE DON'T CARE WHAT THE PRESS WRITES ABOUT US!",
+      "translated_text": "NÃO IMPORTA O QUE A IMPRENSA ESCREVE SOBRE NÓS!",
+      "is_sfx": false
+    },
+    {
+      "id": 10,
+      "order": 10,
+      "panel_id": 3,
+      "x1": 842,
+      "y1": 1764,
+      "x2": 985,
+      "y2": 2038,
+      "label": "text_bubble",
+      "text": "RIGHT, COACH!",
+      "translated_text": "CERTO, TREINADOR!",
+      "is_sfx": false
+    },
+    {
+      "id": 11,
+      "order": 11,
+      "panel_id": 4,
+      "x1": 108,
+      "y1": 1319,
+      "x2": 238,
+      "y2": 1634,
+      "label": "text_bubble",
+      "text": "STILL, THIS ARTICLE IS PRETTY HARSH...",
+      "translated_text": "AINDA ASSIM, ESTE ARTIGO É BEM PESADO...",
+      "is_sfx": false
+    },
+    {
+      "id": 12,
+      "order": 12,
+      "panel_id": 4,
+      "x1": 109,
+      "y1": 1677,
+      "x2": 265,
+      "y2": 1966,
+      "label": "text_bubble",
+      "text": "WE'LL MAKE THEM EAT THEIR WORDS.",
+      "translated_text": "VAMOS FAZER ELES ENGOLIREM ESSAS PALAVRAS.",
+      "is_sfx": false
+    }
+  ]
+}

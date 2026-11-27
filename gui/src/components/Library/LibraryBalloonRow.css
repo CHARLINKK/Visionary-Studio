@@ -1,0 +1,342 @@
+/* =========================================================================
+   VISIONARY STUDIO - LIBRARY BALLOON ROW COMPONENT STYLES
+   ========================================================================= */
+
+/* ── Single Balloon Row (1-Click Target) ── */
+.script-balloon-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 7px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: text;
+}
+
+.script-balloon-row:hover {
+  background: var(--bg-hover);
+  border-color: var(--brand-primary);
+  transform: translateX(2px);
+}
+
+.script-balloon-row.copied {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.script-balloon-row.pending {
+  border-left: 3px solid #f59e0b;
+}
+
+.script-balloon-row.focused {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 1px var(--brand-primary);
+}
+
+.script-balloon-row.search-match {
+  border-left: 3px solid #3b82f6;
+}
+
+.script-balloon-row.search-active {
+  background: #3b82f614;
+  border-color: #3b82f6;
+  border-left-style: solid;
+  border-left-width: 3px;
+}
+
+.balloon-num-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  min-width: 22px;
+  padding-top: 2px;
+}
+
+.balloon-num-badge.clickable-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.balloon-num-badge.clickable-jump:hover {
+  background: rgba(139, 92, 246, 0.25);
+  border-color: rgba(167, 139, 250, 0.65);
+  color: #f1f5f9;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+  transform: translateY(-1px);
+}
+
+.badge-jump-icon {
+  font-size: 9px;
+  opacity: 0.6;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.balloon-num-badge.clickable-jump:hover .badge-jump-icon {
+  opacity: 1;
+  transform: translate(1px, -1px);
+}
+
+.script-balloon-row.copied .balloon-num-badge {
+  color: #10b981;
+}
+
+.balloon-text-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.balloon-en-line {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.balloon-en-line .lang-tag {
+  font-weight: 700;
+  color: var(--text-tertiary);
+  margin-right: 6px;
+}
+
+.balloon-br-line {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+
+.balloon-br-line .lang-tag {
+  font-weight: 700;
+  color: var(--brand-primary);
+  margin-right: 6px;
+  font-size: 12px;
+}
+
+.br-highlight {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.pending-tag {
+  color: #f59e0b;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.balloon-action-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 65px;
+}
+
+.copied-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.copied-badge:hover {
+  background: #10b98138;
+  border-color: #10b9818c;
+}
+
+.copied-badge-pill {
+  -webkit-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  background: #10b9811f;
+  border: 1px solid #10b98159;
+  border-radius: 4px;
+  flex-shrink: 0;
+  align-items: stretch;
+  transition: all .15s;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.copied-badge-pill:hover {
+  background: #10b9812e;
+  border-color: #10b9818c;
+}
+
+.copied-badge-main {
+  color: #10b981;
+  cursor: pointer;
+  white-space: nowrap;
+  background: 0 0;
+  border: none;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 6px 3px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  transition: all .15s;
+  display: inline-flex;
+}
+
+.copied-badge-main:hover {
+  color: #34d399;
+}
+
+.btn-unmark-copied {
+  color: #10b981bf;
+  cursor: pointer;
+  background: 0 0;
+  border: none;
+  border-left: 1px solid #10b9814d;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 6px;
+  transition: all .15s;
+  display: inline-flex;
+}
+
+.btn-unmark-copied:hover {
+  color: #ef4444;
+  background: #ef444433;
+  border-left-color: #ef444466;
+}
+
+.btn-quick-copy {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 5px 7px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  opacity: 0.7;
+}
+
+.script-balloon-row:hover .btn-quick-copy {
+  opacity: 1;
+  background: var(--brand-glow);
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+.btn-edit-balloon {
+  color: var(--text-muted);
+  cursor: pointer;
+  opacity: 0;
+  background: 0 0;
+  border: none;
+  border-radius: 4px;
+  align-items: center;
+  margin-right: 4px;
+  padding: 4px;
+  transition: all .15s;
+  display: flex;
+}
+
+.script-balloon-row:hover .btn-edit-balloon {
+  opacity: .8;
+}
+
+.btn-edit-balloon:hover {
+  opacity: 1;
+  color: var(--text-main);
+  background: var(--bg-hover);
+}
+
+.btn-edit-save {
+  background: var(--brand-primary);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  transition: opacity .15s;
+  display: inline-flex;
+}
+
+.btn-edit-save:hover {
+  opacity: .9;
+}
+
+.btn-edit-cancel {
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  border-radius: 4px;
+  align-items: center;
+  padding: 3px 6px;
+  transition: all .15s;
+  display: inline-flex;
+}
+
+.btn-edit-cancel:hover {
+  color: var(--text-main);
+  background: var(--bg-hover);
+}
+
+/* ── Light & Warm-Paper Theme Overrides ── */
+[data-theme='light'] .script-balloon-row {
+  background: #f8fafc;
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='light'] .script-balloon-row:hover {
+  background: var(--bg-surface);
+  border-color: var(--brand-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme='light'] .balloon-en-line {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+[data-theme='light'] .balloon-en-line .lang-tag,
+[data-theme='light'] .balloon-num-badge {
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+[data-theme='warm-paper'] .script-balloon-row {
+  background: #fdfbf7;
+  border-color: rgba(100, 70, 20, 0.1);
+}
+
+[data-theme='warm-paper'] .script-balloon-row:hover {
+  background: #f5f0e8;
+  border-color: var(--brand-primary);
+}
+
+[data-theme='warm-paper'] .balloon-en-line {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+[data-theme='warm-paper'] .balloon-en-line .lang-tag,
+[data-theme='warm-paper'] .balloon-num-badge {
+  color: var(--text-secondary);
+  font-weight: 700;
+}
